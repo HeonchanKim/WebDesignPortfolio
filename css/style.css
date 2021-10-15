@@ -1,0 +1,22 @@
+#page1 {
+    width: 100%;
+    height: 100%;
+    background-color: #e6e8e7;
+}
+#page2 {
+    width: 100%;
+    height: 100%;
+    background-color: #e6e8e7;
+}
+#page3 {
+    background: url("../images/page3_bg.jpg");
+}
+#page4 {
+    background: url("../images/page4_bg.jpg");
+}
+#page5 {
+    background-color: #e6e8e7;
+}
+#page6 {
+    background: url("../images/page6_bg.jpg");
+}
