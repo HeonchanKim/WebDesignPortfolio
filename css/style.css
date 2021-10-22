@@ -321,8 +321,6 @@ a{
     float: left;
     margin-top: 200px;
 }
-/* .slide1{display: none;} */
-/* .slide2{display: none;} */
 
 #page4 {
     width: 100%;
@@ -331,10 +329,25 @@ a{
     position: relative;
     color: white;
 }
+
+.page4Container{
+    width: 1200px;
+    height: 830px;
+    overflow: hidden;
+}
+.page4Slide{
+    width: 200%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.page4Slide > div{float: left;}
+
 #page4 > div > h2{color: white;}
 .colors2 > li:nth-child(1){background: #ac1f2d;}
 .colors2 > li:nth-child(2){background: #d8c7b8;}
-.page4_slide2{display: none;}
+
+
 
 /* -------------------------------------------------------------------------------- */
 #page5 {
