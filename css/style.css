@@ -314,13 +314,41 @@ a{
     height: 750px;
     float: left;
     margin-top: 100px;
+    position: relative;
 }
 .slide_right2{
     width: 736px;
     height: 600px;
     float: left;
     margin-top: 200px;
+    position: relative;
 }
+.page3_mouseHoverImage1{
+    position: absolute;
+    top: 211px;
+    left: 8px;
+    width: 613px;
+    height: 344px;
+    overflow: hidden;
+}
+.page3_mouseHoverImage1 > img{
+    position: absolute;
+    top: 0;
+}
+
+.page3_mouseHoverImage2{
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 676px;
+    height: 381px;
+    overflow: hidden;
+}
+.page3_mouseHoverImage2 > img{
+    position: absolute;
+    top: 0;
+}
+
 
 #page4 {
     width: 100%;
@@ -347,7 +375,31 @@ a{
 .colors2 > li:nth-child(1){background: #ac1f2d;}
 .colors2 > li:nth-child(2){background: #d8c7b8;}
 
+.page4_mouseHoverImage1{
+    position: absolute;
+    top: 211px;
+    left: 8px;
+    width: 613px;
+    height: 344px;
+    overflow: hidden;
+}
+.page4_mouseHoverImage1 > img{
+    position: absolute;
+    top: 0;
+}
 
+.page4_mouseHoverImage2{
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 676px;
+    height: 381px;
+    overflow: hidden;
+}
+.page4_mouseHoverImage2 > img{
+    position: absolute;
+    top: 0;
+}
 
 /* -------------------------------------------------------------------------------- */
 #page5 {
@@ -463,7 +515,7 @@ a{
     outline: none;
     background: transparent;
     border: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     transform: translateY(13%);
 }
 .leftSmall{background: url("../images/smallL.png");}

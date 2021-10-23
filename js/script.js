@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
     window.addEventListener("wheel", function() {
         if(window.scrollY >= 800 && window.scrollY < 1700){
             for(let i = 0; i < skill.length; i++){
-                skill[i].style.transitionDelay = (i * 0.2) + "s";
+                skill[i].style.transitionDelay = (i * 0.1) + "s";
                 skill[i].style.transitionDuration = "800ms";
                 skill[i].style.height = skill[i].dataset.height;
             };
@@ -24,7 +24,7 @@ window.addEventListener("load", function () {
     const duration = 500;
     const left1 = document.querySelector(".left1");
     const right1 = document.querySelector(".right1");
-
+    
     right1.addEventListener("click", function () {
         if(page3Slide.style.left == "-100%") return;
         window.clearInterval(timerId);
@@ -47,8 +47,8 @@ window.addEventListener("load", function () {
     });
     
     let timerId = window.setInterval(nextSlide, offsetTime);
-
-
+    
+    
     // 3페이지 슬라이드 함수
     function nextSlide() {
         page3Slide.style.left = "-100%";
@@ -70,12 +70,41 @@ window.addEventListener("load", function () {
             page3Slide.style.left = "0";
         }, duration);
     }
+
+    // 슬라이드안 이미지 마우스 후버시 스크롤효과
+    const page3_mouseHoverImage1 = document.querySelector(".page3_mouseHoverImage1 > img");
+    const page3_mouseHoverImage2 = document.querySelector(".page3_mouseHoverImage2 > img");
+
+    page3_mouseHoverImage1.addEventListener("mouseenter",function () {
+        window.setTimeout(function() {
+            page3_mouseHoverImage1.style.transition = "6000ms";
+            page3_mouseHoverImage1.style.top = "-240%";
+        },100)
+    });
+    page3_mouseHoverImage1.addEventListener("mouseleave",function () {
+        this.removeAttribute("style");
+    });
+
+    
+    
+    page3_mouseHoverImage2.addEventListener("mouseenter",function () {
+        window.setTimeout(function() {
+            page3_mouseHoverImage2.style.transition = "3000ms";
+            page3_mouseHoverImage2.style.top = "-90%";
+        },100)
+    });
+    page3_mouseHoverImage2.addEventListener("mouseleave",function () {
+        this.removeAttribute("style");
+    });
+
+    
+    
     //-------------------------------------------------------------------------------------------------------------
     // 4페이지
     const page4Slide = document.querySelector(".page4Slide");
     const left2 = document.querySelector(".left2");
     const right2 = document.querySelector(".right2");
-
+    
     right2.addEventListener("click", function () {
         if(page4Slide.style.left == "-100%") return;
         window.clearInterval(timerId2);
@@ -88,7 +117,7 @@ window.addEventListener("load", function () {
         prevSlide2();
         timerId2 = window.setInterval(nextSlide2, offsetTime);
     });
-
+    
     
     page4Slide.addEventListener("mouseenter",function () {
         window.clearInterval(timerId2);
@@ -97,7 +126,7 @@ window.addEventListener("load", function () {
         timerId2 = window.setInterval(nextSlide2, offsetTime);
     });
     
-    let timerId2 = window.setInterval(nextSlide2, offsetTime);
+    // let timerId2 = window.setInterval(nextSlide2, offsetTime);
 
     // 4페이지 슬라이드 함수
     function nextSlide2() {
@@ -120,6 +149,30 @@ window.addEventListener("load", function () {
             page4Slide.style.left = "0";
         }, duration);
     }
+
+    // 슬라이드안 이미지 마우스 후버시 스크롤효과
+    const page4_mouseHoverImage1 = document.querySelector(".page4_mouseHoverImage1 > img");
+    const page4_mouseHoverImage2 = document.querySelector(".page4_mouseHoverImage2 > img");
+
+    page4_mouseHoverImage1.addEventListener("mouseenter",function () {
+        window.setTimeout(function() {
+            page4_mouseHoverImage1.style.transition = "7000ms";
+            page4_mouseHoverImage1.style.top = "-535%";
+        },100)
+    });
+    page4_mouseHoverImage1.addEventListener("mouseleave",function () {
+        this.removeAttribute("style");
+    });
+
+    page4_mouseHoverImage2.addEventListener("mouseenter",function () {
+        window.setTimeout(function() {
+            page4_mouseHoverImage2.style.transition = "5000ms";
+            page4_mouseHoverImage2.style.top = "-465%";
+        },100)
+    });
+    page4_mouseHoverImage2.addEventListener("mouseleave",function () {
+        this.removeAttribute("style");
+    });
     
     //-------------------------------------------------------------------------------------------------------------
     // 5페이지
@@ -131,16 +184,14 @@ window.addEventListener("load", function () {
     let k = 1;
     let indexNum = 1;
     
-    // 버튼슬라이드
-    // leftSmall.addEventListener("click", reverseLeftSlide);
-    rightSmall.addEventListener("click", btRightSlide);
-
 
     // 마우스 이동시 슬라이드 멈춤
     page5Slide.addEventListener("mouseenter",function () {
+        console.log("mouseenter")
         window.clearInterval(timerId3);
     });
     page5Slide.addEventListener("mouseleave",function () {
+        console.log("mouseleave")
         timerId3 = window.setInterval(doSlide, offsetTime);
     });
 
