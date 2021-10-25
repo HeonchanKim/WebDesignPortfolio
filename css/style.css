@@ -309,6 +309,10 @@ a{
     margin-top: 118px;
     margin-left: 81px;
 }
+.viewWebsite > a {
+    box-sizing: border-box;
+    padding: 18px 22px;
+}
 .slide_right1{
     width: 736px;
     height: 750px;
