@@ -274,10 +274,6 @@ window.addEventListener("load", function () {
             page5Slide.lastElementChild.style.left = 0;
         }, duration);
     }
-    // 역방향 오른쪽 슬라이드
-    function reverseRightSlide() {
-
-    }
 
     // 하단 숫자 변경 함수
     function btNumberChange() {
@@ -301,7 +297,13 @@ window.addEventListener("load", function () {
     // --------------------------------------------------------------------------
     // 스크롤링
 
-/*
+
+
+
+
+    /*
+    let html = document.querySelector("html");
+    
     window.addEventListener("wheel", function(event) {
         event.preventDefault();
     },{passive:false});
@@ -312,6 +314,8 @@ window.addEventListener("load", function () {
 
         if (delta > 0){
             nextPage();
+        }else{
+            prevPage();
         }
     };
     // 다음 페이지
@@ -343,11 +347,37 @@ window.addEventListener("load", function () {
         // 뺄셈의 결과가 변하지 않는다.
         dist -= overScroll;
 
-        document.body.style.scrollY = dist;
-        
-        
+        html.animate({scrollY:dist});
         
         } // end of nextPage
-*/
-    
+
+    // 이전 페이지
+    function prevPage() {
+        // 이전 페이지로 이동한 다음
+        // 페이지 조정을 수행한다.
+
+        // 현재 페이지의 높이
+        let pageHeight = window.innerHeight;
+        // 현재 스크롤된 높이
+        let crtScrollTop = window.scrollY;
+        // 문서 전체 높이
+        const documentHeight = document.body.scrollHeight;
+        // const documentHeight = document.body.clientHeight;
+        // 스크롤 이동 거리
+        let dist = 0;
+
+        // 이전 페이지가 없는 경우에는 종료
+        if(crtScrollTop == 0) return;
+
+        dist = crtScrollTop - pageHeight;
+
+        // 한 페이지가 화면에 다 보이도록 조정
+        var overScroll = dist % pageHeight;
+        if(overScroll != 0) overScroll = pageHeight - overScroll;
+
+        dist += overScroll;
+
+        html.animate({scrollY:dist});
+    }
+    */
 });

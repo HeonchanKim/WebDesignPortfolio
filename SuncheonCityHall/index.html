@@ -502,14 +502,14 @@
                     <li><a href="#">정책소통 1번가</a></li>
                 </ul>
                 <ul class="clickList">
-                    <li><a href="#">공약 & 매니페스토</a></li>
+                    <li><a href="#">공약 &amp; 매니페스토</a></li>
                     <li><a href="#">열린 시장실</a></li>
                 </ul>
             </article>
         </section>
         <section class="quickMenu">
-            <button class="left">left</button>
-            <button class="right">right</button>
+            <button class="quickLeft"><span>left</span></button>
+            <button class="quickRight"><span>right</span></button>
             <ul class="quickList">
                 <li><a href="#">보건소<img src="./images/mainQuick1.png" alt="iconImage1"></a></li>
                 <li><a href="#">순천시 미디어<img src="./images/mainQuick2.png" alt="iconImage2"></a></li>
@@ -527,15 +527,19 @@
         </section>
         <section class="informationBlock">
             <article class="notice">
-                <ul class="noticeTab">
-                    <li><a href="#">새소식</a></li>
-                    <li><a href="#">인사채용</a></li>
-                    <li><a href="#">고시공고</a></li>
-                    <li><a href="#">행사공연</a></li>
-                    <li><a href="#">교육강좌</a></li>
-                </ul>
-                <div class="noticeList">
-                    <h3>새소식<span><img src="./images/main+.jpg" alt="+icon"></span></h3>
+                <input type="radio" name="tab" id="noticeNews">
+                <input type="radio" name="tab" id="noticeRecruitment">
+                <input type="radio" name="tab" id="noticePost">
+                <input type="radio" name="tab" id="noticePerformance">
+                <input type="radio" name="tab" id="noticeLecture">
+                <label for="noticeNews" class="tab tabNews">새소식</label>
+                <label for="noticeRecruitment" class="tab tabRecruitment">인사채용</label>
+                <label for="noticePost" class="tab tabPost">고시공고</label>
+                <label for="noticePerformance" class="tab tabPerformance">행사공연</label>
+                <label for="noticeLecture" class="tab tabLecture">교육강좌</label>
+
+                <div class="tab_bx bx_News">
+                    <h3>새소식<span><img src="./images/main+.png" alt="+icon"></span></h3>
                     <ul>
                         <li><a href="#">순천시립추모공원 화장시설 "추석 당일(21일)" 운영중지안내<span>2021-09-17</span></a></li>
                         <li><a href="#">모두애(愛)티켓 영화 상영 안내<span>2021-09-17</span></a></li>
@@ -544,13 +548,177 @@
                         <li><a href="#">추석명절 기간 시내버스 감축 운행 알림<span>2021-09-16</span></a></li>
                     </ul>
                 </div>
+                <div class="tab_bx bx_Recruitment">
+                    <h3>인사채용<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <ul>
+                        <li><a href="#">2021년 하천 쓰레기 정화사업 참여자 모집공고<span>2021-10-19</span></a></li>
+                    </ul>
+                </div>
+                <div class="tab_bx bx_Post">
+                    <h3>고시공고<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <ul>
+                        <li><a href="#">시민주권 회복을 위한 아이디어 정책마켓 공모<span>2021-09-17</span></a></li>
+                        <li><a href="#">「부동산소유권 이전등기 등에 관한 특별조치법」확인서 발급신청 사실 공고<span>2021-09-15</span></a></li>
+                        <li><a href="#">2021년도『경력단절여성 경력이음바우처 사업』모집 공고<span>2021-09-15</span></a></li>
+                        <li><a href="#">순천시 입산통제구역 및 등산로 폐쇄구역 지정 고시<span>2021-09-13</span></a></li>
+                        <li><a href="#">「부동산소유권 이전등기 등에 관한 특별조치법」확인서 발급신청 사실 공고 (건물분)<span>2021-09-10</span></a></li>
+                    </ul>
+                </div>
+                <div class="tab_bx bx_Performance">
+                    <h3>행사공연<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <ul>
+                        <li><a href="#">「방방곡곡 문화공감」 오페라 &lt;카발레리아 루스티카나&gt; 공연 안내<span>2021-09-07</span></a></li>
+                        <li><a href="#">순천시립합창단 제88회 정기연주회 오페라 “사랑의 묘약” 갈라콘서트 공연 안내<span>2021-08-17</span></a></li>
+                        <li><a href="#">순천시립합창단 제87회 정기연주회 &lt;레퀴엠&gt; “브람스를 아시나요” 공연 안내<span>2021-06-11</span></a></li>
+                        <li><a href="#">순천시립합창단 제86회 정기연주회 “애니 클래식” 공연 / 온라인 공연으로 변경 안내<span>2021-05-06</span></a></li>
+                        <li><a href="#">가족 뮤지컬 레미제라블 ‘코제트 소녀이야기’ 안내<span>2021-04-02</span></a></li>
+                    </ul>
+                </div>
+                <div class="tab_bx bx_Lecture">
+                    <h3>교육강좌<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <ul>
+                        <li><a href="#">독서 &amp; 힐링<span>2021-09-13</span></a></li>
+                        <li><a href="#">아코디언<span>2021-09-13</span></a></li>
+                        <li><a href="#">중국어 인스타 옹알옹알<span>2021-09-13</span></a></li>
+                        <li><a href="#">신통SNS통, 나랑너튜브<span>2021-09-13</span></a></li>
+                        <li><a href="#">파워필라테스<span>2021-09-13</span></a></li>
+                    </ul>
+                </div>
             </article>
-            <article class="informationByField"></article>
+            <article class="informationByField">
+                <h3>분야별 정보</h3>
+                <ul>
+                    <li><a href="#">민원 행정<img src="./images/mainInformationIcon1.png" alt="iconImage"></a></li>
+                    <li><a href="#">복지 보건<img src="./images/mainInformationIcon2.png" alt="iconImage"></a></li>
+                    <li><a href="#">일자리<img src="./images/mainInformationIcon3.png" alt="iconImage"></a></li>
+                    <li><a href="#">지리 교통 <img src="./images/mainInformationIcon4.png" alt="iconImage"></a></li>
+                    <li><a href="#">도시 주택<img src="./images/mainInformationIcon5.png" alt="iconImage"></a></li>
+                    <li><a href="#">기업 경제<img src="./images/mainInformationIcon6.png" alt="iconImage"></a></li>
+                    <li><a href="#">건설 부동산<img src="./images/mainInformationIcon7.png" alt="iconImage"></a></li>
+                    <li><a href="#">상하수도<img src="./images/mainInformationIcon8.png" alt="iconImage"></a></li>
+                    <li><a href="#">생활 환경<img src="./images/mainInformationIcon9.png" alt="iconImage"></a></li>
+                    <li><a href="#">재난 안전<img src="./images/mainInformationIcon10.png" alt="iconImage"></a></li>
+                    <li><a href="#">세무 법률<img src="./images/mainInformationIcon11.png" alt="iconImage"></a></li>
+                </ul>
+            </article>
         </section>
-        <section class="section5"></section>
-        <section class="section6"></section>
-        <section class="section7"></section>
+        <section class="suncheonNews">
+            <h3>순천시 <span>뉴스</span></h3>
+            <button class="newsLeft"><span>left</span></button>
+            <button class="newsright"><span>right</span></button>
+            <ul class="newsList">
+                <li><a href="#">순천시, 23~30일 정원산업전 참가 기업 모집<span>2021.09.22 신아일보</span><img src="./images/mainNewImage1.jpg" alt="newsImage"></a></li>
+                <li><a href="#">전남 순천시, '상생 국민지원금' 90% 지급 달성<span>2021.09.21 위키트리</span><img src="./images/mainNewImage2.jpg" alt="newsImage"></a></li>
+                <li><a href="#">순천시, '2023순천만국제정원박람회장' 조성 박차<span>2021.09.20 파이낸셜뉴스</span><img src="./images/mainNewImage3.jpg" alt="newsImage"></a></li>
+                <li><a href="#">순천시, 삼산공원 민간공원특례사업 정상추진 외<span>2021.09.19 뉴스메이커</span><img src="./images/mainNewImage4.jpg" alt="newsImage"></a></li>
+                <li><a href="#">순천 소형경전철 '스카이큐브' 운영 순항...탑승객 12.7%↑<span>2021.09.13 news1</span><img src="./images/mainNewImage5.jpg" alt="newsImage"></a></li>
+            </ul>
+        </section>
+        <section class="touristAttraction">
+            <h3>볼수록 매력 넘치는 <span>순천</span></h3>
+            <h3><span>순천과 함께하는</span> 힐링관광</h3>
+            <h4>관광명소 더보기<span>+</span></h4>
+        </section>
+        <section class="suncheonSns">
+            <h3>순천 <span>SNS</span><img src="./images/main+.png" alt="+icon"></h3>
+            <ul>
+                <li><a href="#">코로나19 체육시설 긴급 민생지원금 지급 안내<img src="./images/mainSnsPoster1.jpg" alt="SNSImage"></a></li>
+                <li><a href="#">허석 순천시장이 시민께 전하는 추석인사<img src="./images/mainSnsPoster2.jpg" alt="SNSImage"></a></li>
+                <li><a href="#">[크리에이터] 순천에서 즐기는 여유 한잔 - 순천전통야생차체험<img src="./images/mainSnsPoster3.jpg" alt="SNSImage"></a></li>
+            </ul>
+        </section>
     </div>
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <section class="ftTop">
+            <ul>
+                <li><a href="#">읍면동<button><span>click</span></button></span></a></li>
+                <li><a href="#">유관기관<button><span>click</span></button></span></a>
+                    <ul class="ftSub">
+                        <li><a href="#">광주지법순천지원</a></li>
+                        <li><a href="#">광주지검순천지청</a></li>
+                        <li><a href="#">순천교육청</a></li>
+                        <li><a href="#">순천경찰서</a></li>
+                        <li><a href="#">순천세무서</a></li>
+                        <li><a href="#">순천우체국</a></li>
+                        <li><a href="#">순천교도소</a></li>
+                        <li><a href="#">전남동부보훈지청</a></li>
+                        <li><a href="#">통계청 순천사무소</a></li>
+                        <li><a href="#">순천소방서</a></li>
+                        <li><a href="#">순천국토관리사무소</a></li>
+                        <li><a href="#">농산물품질관리원 전남지원 순천광양사무소</a></li>
+                        <li><a href="#">순천 고용복지+센터</a></li>
+                        <li><a href="#">전라남도 동부지역본부</a></li>
+                        <li><a href="#">순천시선거관리위원회</a></li>
+                        <li><a href="#">전남동물위생시험소 동부지소</a></li>
+                        <li><a href="#">법무부 광주보호관찰소 순천지소</a></li>
+                        <li><a href="#">여수MBC순천지사</a></li>
+                        <li><a href="#">CBS전남본부</a></li>
+                        <li><a href="#">한국전력공사 순천지사</a></li>
+                        <li><a href="#">KBS 순천방송국</a></li>
+                        <li><a href="#">cj헬로비전아라방송</a></li>
+                        <li><a href="#">한국국토정보공사 순천시지사</a></li>
+                        <li><a href="#">한국주택금융공사 전남지사</a></li>
+                        <li><a href="#">순천상공회의소</a></li>
+                        <li><a href="#">한국가스공사 동부지사</a></li>
+                        <li><a href="#">한국산업인력공단 전남지사</a></li>
+                        <li><a href="#">한국감정원 전남순천지사</a></li>
+                        <li><a href="#">국민연금공단 순천지사</a></li>
+                        <li><a href="#">한국수자원공사 주암댐관리단</a></li>
+                        <li><a href="#">한국철도공사 전남본부</a></li>
+                        <li><a href="#">한국철도공사 순천역</a></li>
+                        <li><a href="#">교통안전공단 순천자동차검사소</a></li>
+                        <li><a href="#">한국전기안전공사 전남동부지사</a></li>
+                        <li><a href="#">한국농어촌공사 순천광양여수지사</a></li>
+                        <li><a href="#">한국철도시설공단 호남지역본부</a></li>
+                        <li><a href="#">재단법인 전남테크노파크</a></li>
+                        <li><a href="#">순천소상공인지원센터</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">사회단체<button><span>click</span></button></span></a>
+                    <ul class="ftSub">
+                        <li><a href="#">순천여자기독교청년회</a></li>
+                        <li><a href="#">순천환경운동연합</a></li>
+                        <li><a href="#">순천시 지속가능발전협의회</a></li>
+                        <li><a href="#">순천YWCA</a></li>
+                        <li><a href="#">순천YMCA(블로그)</a></li>
+                        <li><a href="#">민족문제연구소 전남동부지부</a></li>
+                        <li><a href="#">순천의료생협요양병원</a></li>
+                        <li><a href="#">순천아이쿱생협</a></li>
+                        <li><a href="#">순천YMCA아이쿱생협</a></li>
+                        <li><a href="#">한국예총순천지부</a></li>
+                        <li><a href="#">순천시시각장애인스포츠연맹</a></li>
+                        <li><a href="#">순천남승룡마라톤대회조직위원회</a></li>
+                        <li><a href="#">순천시 영상미디어센터</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="ftMid">
+            <ul>
+                <li><a href="#">개인정보처리방침<span>|</span></a></li>
+                <li><a href="#">이메일 무단수집거부<span>|</span></a></li>
+                <li><a href="#">저작권 정책<span>|</span></a></li>
+                <li><a href="#">뷰어다운로드<span>|</span></a></li>
+                <li><a href="#">주요전화번호<span>|</span></a></li>
+                <li><a href="#">익명인터넷 게재물관리에 관한 지침<span>|</span></a></li>
+                <li><a href="#">원격지원<span>|</span></a></li>
+                <li><a href="#">찾아오시는 길<span>|</span></a></li>
+                <li><a href="#">사이트맵<span>|</span></a></li>
+            </ul>
+        </section>
+        <section class="ftBot">
+            <img src="./images/mainFtLogo.png" alt="ftLogoImage">
+            <p>
+                전라남도 순천시 장명로 30(장천동) 우편번호 : 57956 대표전화안내 : 061-749-3114 팩스 : 061-749-4600
+                COPYRIGHT &copy; 2018 SUNCHEON. All Rights Reserved. Contact Us suncheonsi@korea.kr
+            </p>
+            <ul>
+                <li><img src="./images/mainFtIcon1.png" alt="ftimage"></li>
+                <li><img src="./images/mainFtIcon2.png" alt="ftimage"></li>
+                <li><img src="./images/mainFtIcon3.png" alt="ftimage"></li>
+                <li><img src="./images/mainFtIcon4.png" alt="ftimage"></li>
+            </ul>
+        </section>
+    </footer>
 </body>
 </html>
