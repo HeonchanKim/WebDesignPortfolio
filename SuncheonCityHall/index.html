@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuncheonCityHall</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header id="header">
@@ -12,8 +14,8 @@
             <ul>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
-                <li><a href="#">LANGUAGE<span><img src="./images/mainUtilityicon.png" alt="image"></span></a>
-                    <ul>
+                <li><a href="#">LANGUAGE<button class="languageButton"><span>click</span></button></a>
+                    <ul class="languageSub">
                         <li><a href="#">KOREAN</a></li>
                         <li><a href="#">ENGLISH</a></li>
                         <li><a href="#">JAPANESE</a></li>
@@ -455,10 +457,10 @@
         <section class="searchBlock">
             <article class="searchTab">
                 <div class="searchBox">검색어를 입력하세요
-                    <img src="./images/mainSearchicon1.png" alt="search">
-                    <img src="./images/mainSearchicon2.png" alt="menu">
+                    <button class="searchIcon"><span>Search</span></button>
+                    <button class="MenuTab"><span>MenuTab</span></button>
                 </div>
-            </div>
+            </article>
             <ul class="todayKeyword">
                 <li><a href="#">오늘의 키워드<span>|</span></a></li>
                 <li><a href="#">#코로나 대응현황</a></li>
@@ -482,12 +484,12 @@
                 </ul>
                 <div class="slideBullet">
                     <ul>
-                        <li><a href="#"><span>start/stop</span></a></li>
-                        <li><a href="#"><span>leftButton</span></a></li>
+                        <li><button class="slideStart"><span>start/stop</span></button></li>
+                        <li><button class="slideLeftButton"><span>leftButton</span></button></li>
                         <li><a href="#"><span>1</span></a></li>
                         <li><a href="#"><span>2</span></a></li>
                         <li><a href="#"><span>3</span></a></li>
-                        <li><a href="#"><span>rightButton</span></a></li>
+                        <li><button class="slideRightButton"><span>rightButton</span></button></li>
                     </ul>
                 </div>
             </article>
@@ -539,7 +541,7 @@
                 <label for="noticeLecture" class="tab tabLecture">교육강좌</label>
 
                 <div class="tab_bx bx_News">
-                    <h3>새소식<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <h3>새소식<a href="#"><span>+</span></a></h3>
                     <ul>
                         <li><a href="#">순천시립추모공원 화장시설 "추석 당일(21일)" 운영중지안내<span>2021-09-17</span></a></li>
                         <li><a href="#">모두애(愛)티켓 영화 상영 안내<span>2021-09-17</span></a></li>
@@ -549,13 +551,13 @@
                     </ul>
                 </div>
                 <div class="tab_bx bx_Recruitment">
-                    <h3>인사채용<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <h3>인사채용<a href="#"><span>+</span></a></h3>
                     <ul>
                         <li><a href="#">2021년 하천 쓰레기 정화사업 참여자 모집공고<span>2021-10-19</span></a></li>
                     </ul>
                 </div>
                 <div class="tab_bx bx_Post">
-                    <h3>고시공고<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <h3>고시공고<a href="#"><span>+</span></a></h3>
                     <ul>
                         <li><a href="#">시민주권 회복을 위한 아이디어 정책마켓 공모<span>2021-09-17</span></a></li>
                         <li><a href="#">「부동산소유권 이전등기 등에 관한 특별조치법」확인서 발급신청 사실 공고<span>2021-09-15</span></a></li>
@@ -565,7 +567,7 @@
                     </ul>
                 </div>
                 <div class="tab_bx bx_Performance">
-                    <h3>행사공연<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <h3>행사공연<a href="#"><span>+</span></a></h3>
                     <ul>
                         <li><a href="#">「방방곡곡 문화공감」 오페라 &lt;카발레리아 루스티카나&gt; 공연 안내<span>2021-09-07</span></a></li>
                         <li><a href="#">순천시립합창단 제88회 정기연주회 오페라 “사랑의 묘약” 갈라콘서트 공연 안내<span>2021-08-17</span></a></li>
@@ -575,7 +577,7 @@
                     </ul>
                 </div>
                 <div class="tab_bx bx_Lecture">
-                    <h3>교육강좌<span><img src="./images/main+.png" alt="+icon"></span></h3>
+                    <h3>교육강좌<a href="#"><span>+</span></a></h3>
                     <ul>
                         <li><a href="#">독서 &amp; 힐링<span>2021-09-13</span></a></li>
                         <li><a href="#">아코디언<span>2021-09-13</span></a></li>
@@ -617,22 +619,22 @@
         <section class="touristAttraction">
             <h3>볼수록 매력 넘치는 <span>순천</span></h3>
             <h3><span>순천과 함께하는</span> 힐링관광</h3>
-            <h4>관광명소 더보기<span>+</span></h4>
+            <h4><a href="#">관광명소 더보기<span>+</span></a></h4>
         </section>
         <section class="suncheonSns">
-            <h3>순천 <span>SNS</span><img src="./images/main+.png" alt="+icon"></h3>
+            <h3>순천 <span>SNS</span><a href="#"><span>+</span></a></h3>
             <ul>
                 <li><a href="#">코로나19 체육시설 긴급 민생지원금 지급 안내<img src="./images/mainSnsPoster1.jpg" alt="SNSImage"></a></li>
                 <li><a href="#">허석 순천시장이 시민께 전하는 추석인사<img src="./images/mainSnsPoster2.jpg" alt="SNSImage"></a></li>
                 <li><a href="#">[크리에이터] 순천에서 즐기는 여유 한잔 - 순천전통야생차체험<img src="./images/mainSnsPoster3.jpg" alt="SNSImage"></a></li>
             </ul>
         </section>
-    </div>
+    </div> <!-- end of container -->
     <footer id="footer">
         <section class="ftTop">
             <ul>
-                <li><a href="#">읍면동<button><span>click</span></button></span></a></li>
-                <li><a href="#">유관기관<button><span>click</span></button></span></a>
+                <li><a href="#">읍면동<a href="#"><span>click</span></a></a></li>
+                <li><a href="#">유관기관<button><span>click</span></button></a>
                     <ul class="ftSub">
                         <li><a href="#">광주지법순천지원</a></li>
                         <li><a href="#">광주지검순천지청</a></li>
@@ -674,7 +676,7 @@
                         <li><a href="#">순천소상공인지원센터</a></li>
                     </ul>
                 </li>
-                <li><a href="#">사회단체<button><span>click</span></button></span></a>
+                <li><a href="#">사회단체<button><span>click</span></button></a>
                     <ul class="ftSub">
                         <li><a href="#">순천여자기독교청년회</a></li>
                         <li><a href="#">순천환경운동연합</a></li>
@@ -703,7 +705,7 @@
                 <li><a href="#">익명인터넷 게재물관리에 관한 지침<span>|</span></a></li>
                 <li><a href="#">원격지원<span>|</span></a></li>
                 <li><a href="#">찾아오시는 길<span>|</span></a></li>
-                <li><a href="#">사이트맵<span>|</span></a></li>
+                <li><a href="#">사이트맵</a></li>
             </ul>
         </section>
         <section class="ftBot">

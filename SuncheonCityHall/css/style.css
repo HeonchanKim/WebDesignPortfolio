@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+body, html{
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/* ----------------------- 헤더영역 ---------------------------------------- */
+#header{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}
+.utility{
+    width: 320px;
+    height: 30px;
+    float: right;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.utility > ul{
+    width: 320px;
+    height: 30px;
+}
+.utility > ul > li{
+    float: left;
+}
+.utility > ul > li:not(:last-child){padding-right: 50px;}
+.utility > ul > li:last-child > span{margin-left: 10px;}
+.utility > ul > li:nth-child(3){position: relative;}
+.languageButton{
+    width: 20px;
+    height: 20px;
+    background: url("../images/mainUtilityicon.png") no-repeat;
+    
+    position: absolute;
+    top: 4px;
+    right: -30px;
+}
+.languageButton > span{display: none;}
+.languageSub{display: none;}
+.logo{
+    width: 250px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+/* ----------------------- 네비게이션영역 ---------------------------------------- */
+#nav{
+    height: 55px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 400;
+    border-top: 1px solid #d2d2d2;
+}
+#nav > ul{
+    width: 1200px;
+    height: 55px;
+    margin: 0 auto;
+}
+#nav > ul > li{
+    float: left;
+    padding: 0 65px;
+    line-height: 55px;
+}
+.sub{display: none;}
+.subSub{display: none;}
+/* ----------------------- 본문영역 ---------------------------------------- */
+#container > section:not(:first-child){display: none;}
+.searchBlock{
+    height: 120px;
+    background: url("../images/mainSearchbg.jpg");
+}
+.searchTab{
+    width: 600px;
+    height: 65px;
+    background-color: #f6f6f6;
+    margin: 0 auto;
+}
+
+/* ----------------------- 푸터영역 ---------------------------------------- */
+#footer{display: none;}

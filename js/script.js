@@ -37,7 +37,9 @@ window.addEventListener("load", function () {
         },100)
     });
     page3_mouseHoverImage1.addEventListener("mouseleave",function () {
-        this.removeAttribute("style");
+        page3_mouseHoverImage1.style.transitionDuration = "1000ms";
+        page3_mouseHoverImage1.style.transitionTimingFunction = "linear"
+        page3_mouseHoverImage1.style.top = "-0";
     });
     // 슬라이드 2페이지 이벤트
     page3_mouseHoverImage2.addEventListener("mouseenter",function () {
@@ -48,7 +50,9 @@ window.addEventListener("load", function () {
         },100)
     });
     page3_mouseHoverImage2.addEventListener("mouseleave",function () {
-        this.removeAttribute("style");
+        page3_mouseHoverImage2.style.transitionDuration = "500ms";
+        page3_mouseHoverImage2.style.transitionTimingFunction = "linear"
+        page3_mouseHoverImage2.style.top = "0";
     });
     
     // 슬라이드 좌우 방향 클릭 이벤트
@@ -130,7 +134,9 @@ window.addEventListener("load", function () {
         },100)
     });
     page4_mouseHoverImage1.addEventListener("mouseleave",function () {
-        this.removeAttribute("style");
+        page4_mouseHoverImage1.style.transitionDuration = "2000ms";
+        page4_mouseHoverImage1.style.transitionTimingFunction = "linear"
+        page4_mouseHoverImage1.style.top = "0";
     });
     // 슬라이드 페이지2 이벤트
     page4_mouseHoverImage2.addEventListener("mouseenter",function () {
@@ -141,7 +147,9 @@ window.addEventListener("load", function () {
         },100)
     });
     page4_mouseHoverImage2.addEventListener("mouseleave",function () {
-        this.removeAttribute("style");
+        page4_mouseHoverImage2.style.transitionDuration = "1750ms";
+        page4_mouseHoverImage2.style.transitionTimingFunction = "linear"
+        page4_mouseHoverImage2.style.top = "0";
     });
     
     // 슬라이드 좌우방향 마우스 클릭 이벤트
@@ -205,14 +213,25 @@ window.addEventListener("load", function () {
     let k = 1;
     let indexNum = 1;
     
-
-    // 마우스 이동시 슬라이드 멈춤
+        // 하단 슬라이드버튼 클릭시 슬라이드효과 이벤트
+        rightSmall.addEventListener("click", function () {
+            if(page5Slide.firstElementChild.style.left == "-100%" || page5Slide.firstElementChild.style.left == "100%") return;
+            window.clearInterval(timerId3);
+            doSlide();
+            timerId3 = window.setInterval(doSlide, offsetTime);
+        });
+        leftSmall.addEventListener("click", function () {
+            if(page5Slide.firstElementChild.style.left == "-100%" || page5Slide.firstElementChild.style.left == "100%") return;
+            window.clearInterval(timerId3);
+            reverseDoSlide();
+            timerId3 = window.setInterval(doSlide, offsetTime);
+        });
+        
+    // 마우스 이동시 슬라이드 멈춤 이벤트
     page5Slide.addEventListener("mouseenter",function () {
-        console.log("mouseenter")
         window.clearInterval(timerId3);
     });
     page5Slide.addEventListener("mouseleave",function () {
-        console.log("mouseleave")
         timerId3 = window.setInterval(doSlide, offsetTime);
     });
 
@@ -229,7 +248,7 @@ window.addEventListener("load", function () {
         }
     }
 
-    // 왼쪽 슬라이드
+    // 왼쪽 슬라이드 함수
     function leftSlie(){
             page5Slide.firstElementChild.style.transition = duration + "ms";
             page5Slide.firstElementChild.style.left = "-100%";
@@ -241,7 +260,7 @@ window.addEventListener("load", function () {
             }, duration)
     }
     
-    // 오른쪽 슬라이드
+    // 오른쪽 슬라이드 함수
     function rightSlie(){
             page5Slide.firstElementChild.style.transition = duration + "ms";
             page5Slide.firstElementChild.style.left = "100%";
@@ -254,41 +273,55 @@ window.addEventListener("load", function () {
 
     }
 
-    // 역방향 슬라이드
-    function doSlideL() {
-
+    // 역방향 슬라이드 함수
+    function reverseDoSlide() {
+        indexNum++;
+        if(indexNum % 2 == 0){
+            reverseRightSlide();
+        }else{
+            reverseLeftSlide();
+        }
     }
     let page5SlideZindex = document.querySelectorAll(".page5Slide > div");
 
-    // 역방향 왼쪽 슬라이드
+    // 역방향 왼쪽 슬라이드 함수
     function reverseLeftSlide() {
-        for(let q = 0; q < page5SlideZindex.left; q++){
-            page5SlideZindex.style.zIndex = 0;
-        }
         page5Slide.removeAttribute("style");
-        page5Slide.appendChild(page5Slide.firstElementChild);
-        page5Slide.lastElementChild.style.left = "-100%"
-        
+        page5Slide.lastElementChild.style.left = "-100%";
+        page5Slide.insertBefore(page5Slide.lastElementChild,page5Slide.firstElementChild);
+        reverseBtNumberChange();
         window.setTimeout(function () {
-            page5Slide.lastElementChild.style.transition = duration + "ms";
-            page5Slide.lastElementChild.style.left = 0;
+            page5Slide.firstElementChild.style.transition = duration + "ms";
+            page5Slide.firstElementChild.style.left = "0";
+        }, duration);
+    }
+
+    // 역방향 오른쪽 슬라이드 함수
+    function reverseRightSlide() {
+        page5Slide.removeAttribute("style");
+        page5Slide.lastElementChild.style.left = "100%";
+        page5Slide.insertBefore(page5Slide.lastElementChild,page5Slide.firstElementChild);
+        reverseBtNumberChange();
+        window.setTimeout(function () {
+            page5Slide.firstElementChild.style.transition = duration + "ms";
+            page5Slide.firstElementChild.style.left = "0";
         }, duration);
     }
 
     // 하단 숫자 변경 함수
     function btNumberChange() {
+        if(k >= 3) k = 0;
         k++;
         btNumber.innerHTML = "0" + k;
-        if(k == 3) k = 0;
     }
 
-    // 오른쪽버튼 슬라이드 함수
-    function btRightSlide() {
-        if(page5Slide.firstElementChild.style.left == "-100%" || page5Slide.firstElementChild.style.left == "100%") return;
-        window.clearInterval(timerId3);
-        doSlide();
-        timerId3 = window.setInterval(doSlide, offsetTime)
+    // 역방향 하단 숫자 변경 함수
+    function reverseBtNumberChange() {
+        k--;
+        if(k == 0) k = 3;
+        btNumber.innerHTML = "0" + k;
     }
+
     //-------------------------------------------------------------------------------------------------------------
 
 

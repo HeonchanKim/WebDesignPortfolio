@@ -519,7 +519,7 @@ a{
     outline: none;
     background: transparent;
     border: none;
-    /* cursor: pointer; */
+    cursor: pointer;
     transform: translateY(13%);
 }
 .leftSmall{background: url("../images/smallL.png");}
