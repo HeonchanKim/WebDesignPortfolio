@@ -2,11 +2,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuncheonCityHall</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
 </head>
 <body>
     <header id="header">
@@ -14,7 +13,7 @@
             <ul>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
-                <li><a href="#">LANGUAGE<button class="languageButton"><span>click</span></button></a>
+                <li><a href="#" class="langButton">LANGUAGE<button class="languageButton langButton"><span>click</span></button></a>
                     <ul class="languageSub">
                         <li><a href="#">KOREAN</a></li>
                         <li><a href="#">ENGLISH</a></li>
@@ -466,22 +465,22 @@
     </nav>
     <div id="container">
         <section class="searchBlock">
-            <article class="searchTab">
-                <h3>검색어를 입력하세요</h3>
-                <button class="searchIcon"><span>Search</span></button>
-                <button class="MenuTab"><span>MenuTab</span></button>
-            </article>
+            <form action="./" method="get"  class="searchTab">
+                <input type="text" name="searchBox" placeholder="검색어를 입력하세요" class="searchBox">
+                <input type="button" class="searchIcon"><span>Search</span>
+                <input type="button" class="MenuTab"><span>MenuTab</span>
+            </form>
             <div class="keywordTop10">
                 <div class="topLine"></div>
                 <h4>오늘의 키워드 <span>TOP 10</span></h4>
-                <ul>
+                <ul class="firstBlockKeyword">
                     <li><a href="#">1. 순천 코로나 대응 현황</a></li>
                     <li><a href="#">2. 개별공시지가</a></li>
                     <li><a href="#">3. 개별공동주택가격</a></li>
                     <li><a href="#">4. 동아시아 문화도시</a></li>
                     <li><a href="#">5. 순천시민카드</a></li>
                 </ul>
-                <ul>
+                <ul class="secondBlockKeyword">
                     <li><a href="#">6. 코로나</a></li>
                     <li><a href="#">7. 조기폐차</a></li>
                     <li><a href="#">8. 노후경유차</a></li>
@@ -516,7 +515,7 @@
                     <ul>
                         <li><button class="slideStart"><span>start/stop</span></button></li>
                         <li><button class="slideLeftButton"><span>leftButton</span></button></li>
-                        <li><a href="#"><span>1</span></a></li>
+                        <li><a href="#" class="on"><span>1</span></a></li>
                         <li><a href="#"><span>2</span></a></li>
                         <li><a href="#"><span>3</span></a></li>
                         <li><button class="slideRightButton"><span>rightButton</span></button></li>
@@ -528,10 +527,10 @@
                 <h4><span>시민</span>에게 힘이되는</h4>
                 <h4><span>시장</span>이 되겠습니다</h4>
                 <ul class="list">
-                    <li><a href="#">&gt; 인사말</a></li>
-                    <li><a href="#">&gt; 시장의 말말</a></li>
-                    <li><a href="#">&gt; 시장에게 바란다</a></li>
-                    <li><a href="#">&gt; 정책소통 1번가</a></li>
+                    <li><a href="#"><span>#</span> 인사말</a></li>
+                    <li><a href="#"><span>#</span> 시장의 말말</a></li>
+                    <li><a href="#"><span>#</span> 시장에게 바란다</a></li>
+                    <li><a href="#"><span>#</span> 정책소통 1번가</a></li>
                 </ul>
                 <ul class="clickList">
                     <li><a href="#">공약 &amp; 매니페스토</a></li>

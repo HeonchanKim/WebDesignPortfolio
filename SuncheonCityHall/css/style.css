@@ -16,6 +16,11 @@ button{
     border: none;
     cursor: pointer;
 }
+input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
 /* ----------------------- 헤더영역 ---------------------------------------- */
 #header{
     width: 1200px;
@@ -59,6 +64,7 @@ button{
     box-sizing: border-box;
     background-color: #ffffff;
     border: 1px solid #d2d2d2;
+    z-index: 10;
 
     font-size: 13px;
     text-align: center;
@@ -69,6 +75,11 @@ button{
     width: 250px;
     height: 100px;
     margin: 0 auto;
+}
+
+.languageSub > li > a:hover{
+    display: block;
+    background-color: rgb(240, 240, 240);
 }
 
 /* ----------------------- 네비게이션영역 ---------------------------------------- */
@@ -92,8 +103,6 @@ button{
 }
 
 
-
-/* #nav > ul > li:not(:nth-child(3)) > .sub{display: none;} */
 #nav > ul > li:nth-child(1) > .sub{display: none;}
 #nav > ul > li:nth-child(2) > .sub{display: none;}
 #nav > ul > li:nth-child(3) > .sub{display: none;}
@@ -101,8 +110,7 @@ button{
 #nav > ul > li:nth-child(5) > .sub{display: none;}
 #nav > ul > li:nth-child(6) > .sub{display: none;}
 
-/* #nav > ul > li:not(:nth-child(3)) > .subTitle{display: none;} */
-#nav > ul > li:nth-child(1) > .subTitle{display: none;}
+#nav > ul > li:nth-child(1) > .subTitle{display: none;} 
 #nav > ul > li:nth-child(2) > .subTitle{display: none;}
 #nav > ul > li:nth-child(3) > .subTitle{display: none;}
 #nav > ul > li:nth-child(4) > .subTitle{display: none;}
@@ -123,13 +131,14 @@ button{
     border: 1px solid #d2d2d2;
     border-right: none;
     box-sizing: border-box;
+    z-index: 10;
 }
-#nav > ul > li:nth-child(1) > .subTitle{height: 464px; left: 0;}
-#nav > ul > li:nth-child(2) > .subTitle{height: 278px; left: -200px;}
-#nav > ul > li:nth-child(3) > .subTitle{height: 370px; left: -400px;}
-#nav > ul > li:nth-child(4) > .subTitle{height: 416px; left: -600px;}
-#nav > ul > li:nth-child(5) > .subTitle{height: 462px; left: -800px;}
-#nav > ul > li:nth-child(6) > .subTitle{height: 650px; left: -1000px;}
+#nav > ul > li:nth-child(1) > .subTitle{height: 454px; left: 0;}
+#nav > ul > li:nth-child(2) > .subTitle{height: 272px; left: -196px;}
+#nav > ul > li:nth-child(3) > .subTitle{height: 362px; left: -392.5px;}
+#nav > ul > li:nth-child(4) > .subTitle{height: 406px; left: -588.5px;}
+#nav > ul > li:nth-child(5) > .subTitle{height: 452px; left: -785px;}
+#nav > ul > li:nth-child(6) > .subTitle{height: 638px; left: -981px;}
 .subTitle::after{
     content: "";
     display: block;
@@ -138,10 +147,9 @@ button{
     background-color: #1471ac;
     margin: 5px auto;
 }
-#nav > ul > li > .sub > li{position: relative;}
 #nav > ul > li > .sub{
     width: 230px;
-    height: 453px;
+    /* height: 453px; */
     position: absolute;
     top: 55px;
     background-color: #1471ac;
@@ -151,20 +159,24 @@ button{
     box-sizing: border-box;
     border: 1px solid #d2d2d2;
     border-style: solid none;
+    z-index: 15;
 }
 
-#nav > ul > li:nth-child(1) > .sub{height: 464px; left: 200px;}
-#nav > ul > li:nth-child(2) > .sub{height: 278px; left: 0px;}
-#nav > ul > li:nth-child(3) > .sub{height: 370px; left: -200px;}
-#nav > ul > li:nth-child(4) > .sub{height: 416px; left: -400px;}
-#nav > ul > li:nth-child(5) > .sub{height: 462px; left: -600px;}
-#nav > ul > li:nth-child(6) > .sub{height: 650px; left: -800px;}
+#nav > ul > li:nth-child(1) > .sub{height: 454px; left: 200px;} 
+#nav > ul > li:nth-child(2) > .sub{height: 272px; left: 4px;}
+#nav > ul > li:nth-child(3) > .sub{height: 362px; left: -192px;}
+#nav > ul > li:nth-child(4) > .sub{height: 406px; left: -388px;}
+#nav > ul > li:nth-child(5) > .sub{height: 452px; left: -585px;}
+#nav > ul > li:nth-child(6) > .sub{height: 638px; left: -781px;}
 
 #nav > ul > li > .sub > li{
+    position: relative;
+    width: 230px;
     height: 45px;
     padding-left: 18px;
     border-bottom: 1px solid rgba(239, 239, 239, 0.2);
     line-height: 45px;
+    box-sizing: border-box;
 }
 #nav > ul > li:nth-child(1) > .sub > li:nth-child(1), #nav > ul > li:nth-child(1) > .sub > li:nth-child(6){
     height: 69px;
@@ -176,16 +188,23 @@ button{
     height: 92px;
 }
 .subSub{
-    display: none;
+    /* display: none; */
     font-size: 14px;
     font-weight: 100;
     padding-left: 10px;
     color: #333333;
+
     background-color: white;
     border: 1px solid #d2d2d2;
     border-left: none;
     border-bottom: none;
+    box-sizing: border-box;
+
     width: 770px;
+    height: 45px;
+    position: absolute;
+    top: -1px;
+    left: 230px;
 }
 /* .sub1 > li > .subSub{display: block;} */
 /* .sub2 > li > .subSub{display: block;} */
@@ -197,14 +216,6 @@ button{
 .subSub > li{float: left; height: 25px;}
 .subSub > li > a > span{padding: 0 14px;}
 
-/* 정보공개 서브네비메뉴 */
-#nav > ul > li > .sub > li > .subSub{
-    /* display: block; */
-    height: 46px;
-    position: absolute;
-    top: -1px;
-    left: 230px;
-}
 /* #nav > ul > li > .sub1 > li > .subSub{display: none;} */
 /* #nav > ul > li > .sub2 > li > .subSub{display: none;} */
 /* #nav > ul > li > .sub3 > li > .subSub{display: none;} */
@@ -222,6 +233,8 @@ button{
 }
 #nav > ul > li > .sub > li:last-child > .subSub{border-bottom: 1px solid #d2d2d2;}
 #nav > ul > li > .sub > li > .subSub > li > a > span {cursor:default}
+#nav > ul > li > .sub > li:last-child > .subSub{height: 46px;}
+#nav > ul > li > .sub6 > li > .subSub{width: 770.5px;}
 /* ----------------------- 본문영역 ---------------------------------------------- */
 /* Section1---------------------------------- */
 .searchBlock{
@@ -230,7 +243,7 @@ button{
     background: url("../images/mainSearchbg.jpg") no-repeat;
     padding-top: 55px;
     box-sizing: border-box;
-    position: relative;
+    /* position: relative; */
     z-index: -1;
 }
 .searchTab{
@@ -241,13 +254,13 @@ button{
     margin: 0 auto;
     position: relative;
 }
-.searchTab > h3{
+.searchTab > input:nth-of-type(1){
+    width: 420px;
     font-size: 20px;
     font-weight: 200;
     line-height: 65px;
     padding-left: 30px;
 }
-.searchIcon > span{display: none;}
 .MenuTab > span{display: none;}
 .searchIcon{
     position: absolute;
@@ -256,7 +269,9 @@ button{
     width: 30px;
     height: 30px;
     background: url("../images/mainSearchicon1.png") no-repeat;
+    cursor: pointer;
 }
+.searchTab > span{display: none;}
 .MenuTab{
     position: absolute;
     top: 32%;
@@ -264,6 +279,7 @@ button{
     width: 30px;
     height: 30px;
     background: url("../images/mainSearchicon2.png") no-repeat;
+    cursor: pointer;
 }
 .keywordTop10{
     position: absolute;
@@ -273,7 +289,9 @@ button{
     left: 50%;
     transform: translateX(-50%);
     font-weight: 300;
+    border-radius: 0 0 10px 10px;
     display: none;
+    z-index: 10;
 }
 .topLine{
     margin: 0 auto;
@@ -323,6 +341,7 @@ button{
 .todayKeyword > li{
     float: left;
 }
+.todayKeyword > li > a > span{cursor: default;}
 .todayKeyword > li:first-child > a > span{padding-left: 6px;}
 .todayKeyword > li:not(:last-child){padding-right: 12px;}
 .sns{
@@ -342,12 +361,12 @@ button{
     margin: 0 auto;
     padding-top: 10px;
 }
-.mainSlide{width: 790px; height: 400px; position: relative; overflow: hidden; float: left;}
+.mainSlide{width: 790px; height: 400px; overflow: hidden; float: left; z-index: -10;}
 .mainSlide > ul{
     width: 300%; height: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
-    left: -100%;
+    left: 0;
 }
 .mainSlide > ul > li{
     width: 790px; height: 400px;
@@ -356,9 +375,9 @@ button{
 .slideBullet{
     width: 250px;
     height: 33px;
-    position: absolute;
+    position: relative;
     left: 50%;
-    bottom: 2%;
+    bottom: 11%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 16.5px;
@@ -378,6 +397,9 @@ button{
     height: 15px;
     border-radius: 50%;
     background-color: white;
+}
+.slideBullet > ul > li > a.on{
+    background-color: #1471ac;
 }
 .slideBullet > ul > li:not(:nth-child(5)) > a{margin-right: 28px;}
 .slideStart{
@@ -400,7 +422,7 @@ button{
     float: right;
     color: #333333;
     box-sizing: border-box;
-    position: relative;
+    z-index: -10;
 }
 .suncheonMayor > h3{
     padding-top: 40px;
@@ -445,8 +467,8 @@ button{
     font-weight: 400;
     line-height: 53px;
 
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: -25px;
 }
 .clickList > li{
     float: left;
@@ -466,7 +488,7 @@ button{
     width: 100%;
     height: 150px;
     background-color: #1471ac;
-    margin-top: 60px;
+    margin-top: 80px;
     color: white;
     font-size: 16px;
     font-weight: 400;
@@ -863,11 +885,12 @@ button{
     background-color: white;
     position: absolute;
     top: -303px;
-    left: 0px;
-    overflow-y: scroll;
+    left: -1px;
+    overflow: hidden scroll;
     color: #333333;
     border-left: 1px solid #e3e3e3;
     border-top: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
 }
 .ftSub > li{
     height: 24px;
@@ -875,8 +898,15 @@ button{
     padding-left: 30px;
 }
 .ftSub1{display: none;}
-.ftSub2{display: none;}
-::-webkit-scrollbar-
+/* .ftSub2{display: none;} */
+.ftSub2{
+    width: 398px;
+}
+.ftSub::-webkit-scrollbar{width: 8px;}
+.ftSub::-webkit-scrollbar-thumb{
+    background-color: #eeeeee;
+    border-radius: 8px;
+}
 .ftSub::-webkit-scrollbar-button{display: none;}
 .ftMid{
     width: 100%;
@@ -928,3 +958,25 @@ button{
     height: 65px;
     float: left;
 }
+/* ---------------------------------------------------------------------------- */
+.languageSubOn{
+    display: block;
+    transition: 500ms;
+}
+/* .languageSubRotate{
+    rotate: (180deg);
+    transition: 500ms;
+} */
+
+.slideUpOn{
+    transition-property: padding-top, padding-bottom, margin-top, margin-bottom, height;
+    transition-duration: 500ms;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+

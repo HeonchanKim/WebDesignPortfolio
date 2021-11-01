@@ -223,6 +223,10 @@ a{
 .left{left: 5%; background: url("../images/left.png") no-repeat;}
 .right{right: 5%; background: url("../images/right.png") no-repeat;}
 
+.left, .right:hover{
+    opacity: 50%;
+    transition-duration: 300ms;
+}
 
 .page3Container{
     width: 1200px;
@@ -335,9 +339,17 @@ a{
     height: 344px;
     overflow: hidden;
 }
+
 .page3_mouseHoverImage1 > img{
     position: absolute;
     top: 0;
+    transition-duration: 1000ms;
+    transition-timing-function: linear;
+}
+.page3_mouseHoverImage1 > img:hover{
+    transition-duration: 2000ms;
+    transition-timing-function: linear;
+    top: -240%;
 }
 
 .page3_mouseHoverImage2{
@@ -351,8 +363,14 @@ a{
 .page3_mouseHoverImage2 > img{
     position: absolute;
     top: 0;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
 }
-
+.page3_mouseHoverImage2 > img:hover{
+    transition-duration: 1000ms;
+    transition-timing-function: linear;
+    top: -90%;
+}
 
 #page4 {
     width: 100%;
@@ -390,6 +408,13 @@ a{
 .page4_mouseHoverImage1 > img{
     position: absolute;
     top: 0;
+    transition-duration: 2000ms;
+    transition-timing-function: linear;
+}
+.page4_mouseHoverImage1 > img:hover{
+    transition-duration: 4000ms;
+    transition-timing-function: linear;
+    top: -535%;
 }
 
 .page4_mouseHoverImage2{
@@ -403,6 +428,13 @@ a{
 .page4_mouseHoverImage2 > img{
     position: absolute;
     top: 0;
+    transition-duration: 1750ms;
+    transition-timing-function: linear;
+}
+.page4_mouseHoverImage2 > img:hover{
+    transition-duration: 3500ms;
+    transition-timing-function: linear;
+    top: -465%;
 }
 
 /* -------------------------------------------------------------------------------- */
