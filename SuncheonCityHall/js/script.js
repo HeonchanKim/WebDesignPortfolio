@@ -260,7 +260,62 @@ window.addEventListener("load", function () {
             index++;
         }, duration);
     }
+    // ---------------------------------------------------------------------------------------------
+    //QuickMenu
+    const quickLeft = document.querySelector(".quickLeft");
+    const quickRight = document.querySelector(".quickRight");
+    const quickList = document.querySelector(".quickList");
 
+    quickRight.addEventListener("click", function () {
+        if(quickList.style.left == "-240px") return
+        doSlideQuickRight();
+    });
+    quickLeft.addEventListener("click", function () {
+        if(quickList.style.left == "-240px") return
+        doSlideQuickLeft();
+    });
+
+    // 오른쪽 슬라이드 함수
+    function doSlideQuickRight() {
+        quickList.style.left = "-240px";
+        quickList.style.transition = "400ms";
+        window.setTimeout(function () {
+            quickList.removeAttribute("style");
+            quickList.appendChild(quickList.firstElementChild);
+        }, 400);
+    }
+
+    // 왼쪽 슬라이드 함수
+    function doSlideQuickLeft() {
+        quickList.removeAttribute("style");
+        quickList.insertBefore(quickList.lastElementChild, quickList.firstElementChild);
+        quickList.style.left = "-240px";
+        window.setTimeout(function () {
+            quickList.style.transition = "400ms";
+            quickList.style.left = "-120px";
+        }, 10);
+    }
+    // ---------------------------------------------------------------------------------------------
+    // notice
+    const notice = document.querySelectorAll(".notice > ul > li");
+    const noticeA = document.querySelectorAll(".notice > ul > li > a");
+    const noticeSpan = document.querySelectorAll(".notice > ul > li > a > span");
+    const noticeSub = document.querySelectorAll(".noticeSub");
+
+    for(let u = 0; u < notice.length; u++){
+        notice[u].addEventListener("mouseenter", function () {
+            noticeA[u].classList.add("noticeOn");
+            noticeSpan[u].style.display = "none";
+            noticeSub[u].style.display = "block"
+        });
+        notice[u].addEventListener("mouseleave", function () {
+            noticeA[u].classList.remove("noticeOn");
+            noticeSpan[u].style.display = "block";
+            noticeSub[u].removeAttribute("style");
+        });
+    }
+
+    // ---------------------------------------------------------------------------------------------
 
 
 

@@ -271,6 +271,10 @@ input{
     background: url("../images/mainSearchicon1.png") no-repeat;
     cursor: pointer;
 }
+.searchIcon:hover{
+    opacity: 50%;
+    transition: 400ms;
+}
 .searchTab > span{display: none;}
 .MenuTab{
     position: absolute;
@@ -280,6 +284,10 @@ input{
     height: 30px;
     background: url("../images/mainSearchicon2.png") no-repeat;
     cursor: pointer;
+}
+.MenuTab:hover{
+    opacity: 50%;
+    transition: 400ms;
 }
 .keywordTop10{
     position: absolute;
@@ -458,6 +466,9 @@ input{
 .list > li:not(:nth-of-type(4)){
     padding-bottom: 12px;
 }
+.list > li > a:hover{
+    font-weight: 400;
+}
 .clickList{
     width: 390px;
     height: 53px;
@@ -509,6 +520,10 @@ input{
     float: left;
     background-image: url("../images/mainQuickDirectionLeft.png");
 }
+.quickLeft:hover, .quickRight:hover{
+    opacity: 0.7;
+    transition-duration: 500ms;
+}
 .quickRight{
     float: right;
     background-image: url("../images/mainQuickDirectionRight.png");
@@ -546,7 +561,7 @@ input{
 /* Section4---------------------------------- */
 .informationBlock{
     width: 1200px;
-    height: 456px;
+    height: 470px;
     margin: 0 auto;
     margin-top: 108px;
     position: relative;
@@ -554,40 +569,127 @@ input{
 .informationBlock > article{float: left;}
 .notice{
     width: 890px;
-    height: 456px;
+    height: 470px;
 }
-.notice input{display: none;}
-.notice label{
-    position: relative;
-    display: block;
+.notice > ul{
     width: 170px;
-    height: 72px;
-    cursor: pointer;
-    background-color: #f0f0f0;
+    height: 400px;
     font-size: 22px;
     line-height: 72px;
-    padding-left: 30px;
     font-weight: 400;
+    background-color: #f0f0f0;
+}
+.notice > ul > li{
+    width: 170px;
+    height: 72px;
+    padding-left: 30px;
     box-sizing: border-box;
 }
-.notice label:nth-of-type(5){height: 112px;}
-.notice > label:not(:nth-of-type(5))::after{
+/* .notice > ul > li:not(:nth-of-type(5))::after{
     content: "";
     display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    width: 138px;
+    height: 1px;
+    border-top: 1px solid #d4d4d4;
+} */
+.notice > ul > li > a{
+    display: block;
+    width: 161px;
+    height: 72px;
+}
+.notice > ul > li > a > span{
+    display: block;
     width: 138px;
     height: 1px;
     border-top: 1px solid #d4d4d4;
 }
-.tab_bx:not(:nth-of-type(1)){display: none;}
+.notice > ul > li > a > span:nth-of-type(1){display: none;}
+
+.noticeOn{
+    /* margin-left: 32px; */
+    background-color: #7e9dcd;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    transition: 500ms;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    /* padding-right: 30px; */
+}
+
+.notice > ul > li:nth-of-type(1) > ul{display: none;}
+.notice > ul > li:nth-of-type(2) > ul{display: none;}
+.notice > ul > li:nth-of-type(3) > ul{display: none;}
+.notice > ul > li:nth-of-type(4) > ul{display: none;}
+.notice > ul > li:nth-of-type(5) > ul{display: none;}
+.noticeSub{
+    width: 648px;
+    height: 456px;
+    position: absolute;
+    top: 7px;
+    left: 170px;
+    padding-left: 45px;
+}
+.noticeSub > li{
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.noticeSub > li:nth-of-type(1){
+    padding-top: 29px;
+    height: auto;
+    font-size: 28px;
+    font-weight: 500;
+}
+.noticeSub > li:nth-of-type(1)::after{
+    content: "";
+    display: block;
+    width: 648px;
+    height: 3px;
+    background-color: #7e9dcd;
+    margin-top: 25px;
+    margin-bottom: 29px;
+}
+.noticeSub > li:nth-of-type(1) > a > span{
+    float: right;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("../images/main+.png")
+}
+.noticeSub > li:nth-of-type(1) > a > span > span{display: none;}
+
+.noticeSub > li:not(:nth-of-type(1)){
+    width: auto;
+    height: 35px;
+    padding-bottom: 18px;
+}
+.noticeSub > li:not(:nth-of-type(1), :last-child)::after{
+    content: "";
+    display: block;
+    width: 648px;
+    height: 1px;
+    background-color: #d4d4d4;
+    /* margin: 18px 0; */
+    margin-top: 18px;
+}
+.noticeSub > li > a > span{float: right;}
+/* ----------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+.tab_bx{display: none;}
 .tab_bx{
     width: 648px;
     height: 456px;
     position: absolute;
     top: 0;
     left: 215px;
+}
+.tab_bxOn{
+    display: block;
+    transition-duration: 500ms;
 }
 .tab_bx > h3{
     padding-top: 29px;
@@ -624,11 +726,12 @@ input{
     margin: 18px 0;
 }
 .tab_bx > ul > li > a > span{float: right;}
-
-
+/* ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------ */
 .informationByField{
     width: 300px;
-    height: 456px;
+    height: 470px;
     float: right;
     text-align: center;
 }
@@ -646,6 +749,10 @@ input{
     margin-top: 9px;
     margin-bottom: 24px;
 }
+.informationByField > ul{
+    width: 300px;
+    height: inherit;
+}
 .informationByField > ul > li{
     width: 100px;
     height: 80px;
@@ -655,14 +762,83 @@ input{
 }
 .informationByField > ul > li > a > span{
     display: block;
-    padding-top: 62px;
 }
-.informationByField > ul > li > a > img{
+.informationByField > ul > li:nth-of-type(1) > a > span::before{
+    content: "";
     display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon1.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(2) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon2.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(3) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon3.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(4) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon4.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(5) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon5.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(6) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon6.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(7) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon7.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(8) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon8.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(9) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon9.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(10) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon10.png") no-repeat;
+}
+.informationByField > ul > li:nth-of-type(11) > a > span::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 63px;
+    background: url("../images/mainInformationIcon11.png") no-repeat;
 }
 /* Section5---------------------------------- */
 .suncheonNews{
@@ -722,6 +898,7 @@ input{
     /* margin: 0 30px; */
     margin-right: 60px;
     position: relative;
+    line-height: 1;
 }
 .newsList > li > a > img{
     position: absolute;
@@ -733,6 +910,7 @@ input{
     display: block;
     margin-top: 165px;
     padding-left: 4px;
+    line-height: 1;
 }
 .newsList > li > a > span > span{
     width: 280px;
