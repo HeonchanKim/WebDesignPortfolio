@@ -20,6 +20,8 @@ input{
     background-color: transparent;
     border: none;
     outline: none;
+    padding: 0;
+    margin: 0;
 }
 /* ----------------------- 헤더영역 ---------------------------------------- */
 #header{
@@ -46,8 +48,8 @@ input{
 .utility > ul > li:last-child > span{margin-left: 10px;}
 .utility > ul > li:nth-child(3){position: relative;}
 .languageButton{
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 8px;
     background: url("../images/mainUtilityicon.png") no-repeat;
     
     position: absolute;
@@ -164,8 +166,8 @@ input{
 
 #nav > ul > li:nth-child(1) > .sub{height: 454px; left: 200px;} 
 #nav > ul > li:nth-child(2) > .sub{height: 272px; left: 4px;}
-#nav > ul > li:nth-child(3) > .sub{height: 362px; left: -192px;}
-#nav > ul > li:nth-child(4) > .sub{height: 406px; left: -388px;}
+#nav > ul > li:nth-child(3) > .sub{height: 362px; left: -192.5px;}
+#nav > ul > li:nth-child(4) > .sub{height: 406px; left: -388.5px;}
 #nav > ul > li:nth-child(5) > .sub{height: 452px; left: -585px;}
 #nav > ul > li:nth-child(6) > .sub{height: 638px; left: -781px;}
 
@@ -414,6 +416,13 @@ input{
     width: 13px;
     height: 17px;
     background: url("../images/mainSlideStopButton.png");
+    /* background-image: url(../images/mainSlideStopButton.png); */
+}
+.stopOn{
+    width: 13px;
+    height: 17px;
+    background: url("../images/mainSlideStartButton.png");
+
 }
 .slideLeftButton, .slideRightButton{
     width: 11px;
@@ -550,13 +559,108 @@ input{
     box-sizing: border-box;
     position: relative;
 }
+.quickList > li > a{
+    display: block;
+}
 .quickList > li > a > span{
     display: block;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
     white-space: nowrap;
+    padding-top: 18px;
+}
+.quickList > li:nth-of-type(1) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick1.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(2) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick2.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(3) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick3.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(4) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick4.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(5) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick5.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(6) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick6.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(7) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick7.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(8) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick8.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(9) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick9.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(10) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick10.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(11) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick11.png") no-repeat;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+.quickList > li:nth-of-type(12) > a::before{
+    content: "";
+    display: block;
+    background: url("../images/mainQuick12.png") no-repeat;
+    width: 80px;
+    height: 80px;
 }
 /* Section4---------------------------------- */
 .informationBlock{
@@ -617,18 +721,21 @@ input{
     /* padding-right: 30px; */
 }
 
-.notice > ul > li:nth-of-type(1) > ul{display: none;}
+/* .notice > ul > li:nth-of-type(1) > ul{display: none;}
 .notice > ul > li:nth-of-type(2) > ul{display: none;}
 .notice > ul > li:nth-of-type(3) > ul{display: none;}
 .notice > ul > li:nth-of-type(4) > ul{display: none;}
-.notice > ul > li:nth-of-type(5) > ul{display: none;}
+.notice > ul > li:nth-of-type(5) > ul{display: none;} */
 .noticeSub{
+    display: none;
+    /* visibility: hidden; */
     width: 648px;
     height: 456px;
     position: absolute;
     top: 7px;
     left: 170px;
     padding-left: 45px;
+    transition-duration: 500ms;
 }
 .noticeSub > li{
     width: auto;
@@ -637,7 +744,14 @@ input{
     font-weight: 400;
     line-height: 1;
 }
-
+.noticeSub > li > a{
+    transition-duration: 500ms;
+}
+.noticeSub > li:not(:first-child) > a:hover{
+    font-size: 17px;
+    /* font-weight: 500; */
+    transition-duration: 500ms;
+}
 .noticeSub > li:nth-of-type(1){
     padding-top: 29px;
     height: auto;
@@ -658,7 +772,12 @@ input{
     display: block;
     width: 30px;
     height: 30px;
-    background: url("../images/main+.png")
+    background: url("../images/main+.png");
+    transition-duration: 700ms;
+}
+.noticeSub > li:nth-of-type(1) > a > span:hover{
+    transform: rotate(360deg);
+    transition-duration: 700ms;
 }
 .noticeSub > li:nth-of-type(1) > a > span > span{display: none;}
 
@@ -677,58 +796,11 @@ input{
     margin-top: 18px;
 }
 .noticeSub > li > a > span{float: right;}
-/* ----------------------------------------------------------------------------------- */
-/* ----------------------------------------------------------------------------------- */
-.tab_bx{display: none;}
-.tab_bx{
-    width: 648px;
-    height: 456px;
-    position: absolute;
-    top: 0;
-    left: 215px;
-}
 .tab_bxOn{
     display: block;
     transition-duration: 500ms;
 }
-.tab_bx > h3{
-    padding-top: 29px;
-    font-size: 28px;
-    font-weight: 500;
-}
-.tab_bx > h3 > a > span{
-    float: right;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: url("../images/main+.png");
-}
-.tab_bx > h3 > a > span > span{display: none;}
-.tab_bx > h3::after{
-    content: "";
-    display: block;
-    width: 648px;
-    height: 3px;
-    background-color: #7e9dcd;
-    margin-top: 25px;
-    margin-bottom: 29px;
-}
-.tab_bx > ul{
-    font-size: 16px;
-    font-weight: 400;
-}
-.tab_bx > ul > li:not(:last-child)::after{
-    content: "";
-    display: block;
-    width: 648px;
-    height: 1px;
-    background-color: #d4d4d4;
-    margin: 18px 0;
-}
-.tab_bx > ul > li > a > span{float: right;}
-/* ------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------------- */
 .informationByField{
     width: 300px;
     height: 470px;
@@ -762,6 +834,11 @@ input{
 }
 .informationByField > ul > li > a > span{
     display: block;
+    transition-duration: 500ms;
+}
+.informationByField > ul > li > a > span:hover{
+    opacity: 0.5;
+    transition-duration: 500ms;
 }
 .informationByField > ul > li:nth-of-type(1) > a > span::before{
     content: "";
@@ -873,6 +950,8 @@ input{
     position: absolute;
     top: 55%;
 }
+.newsLeft:hover{opacity: 0.7; transition-duration: 500ms;}
+.newsright:hover{opacity: 0.7; transition-duration: 500ms;}
 .newsLeft > span{display: none;}
 .newsright > span{display: none;}
 .newsLeft{background: url("../images/mainNewImageDirectionLeft.png"); left: 0;}
@@ -898,7 +977,6 @@ input{
     /* margin: 0 30px; */
     margin-right: 60px;
     position: relative;
-    line-height: 1;
 }
 .newsList > li > a > img{
     position: absolute;
@@ -910,16 +988,17 @@ input{
     display: block;
     margin-top: 165px;
     padding-left: 4px;
-    line-height: 1;
+    line-height: 1.3;
+    
 }
 .newsList > li > a > span > span{
-    width: 280px;
+    width: 290px;
     font-size: 16px;
     display: block;
-    margin-top: 40px;
-    padding-right: 5px;
+    margin-top: 30px;
+    /* padding-right: 5px; */
     text-align: right;
-    
+    line-height: 1;
 }
 /* Section6---------------------------------- */
 .touristAttraction{
@@ -970,6 +1049,11 @@ input{
     width: 30px;
     height: 30px;
     background: url("../images/main+.png");
+    transition-duration: 700ms;
+}
+.suncheonSns > h3 > a:hover{
+    transform: rotate(360deg);
+    transition-duration: 700ms;
 }
 .suncheonSns > h3 > a > span{display: none;}
 .suncheonSns > h3::after{
@@ -995,6 +1079,10 @@ input{
     float: left;
     position: relative;
 }
+.suncheonSns > ul > li:hover > a > img{
+    opacity: 0.7;
+    transition-duration: 600ms;
+}
 .suncheonSns > ul > li:not(:nth-of-type(3)){
     margin-right: 90px;
 }
@@ -1005,6 +1093,7 @@ input{
 .suncheonSns > ul > li > a > img{
     position: absolute;
     top: 0;
+    transition-duration: 600ms;
 }
 /* ----------------------- 푸터영역 ---------------------------------------- */
 #footer{
@@ -1042,7 +1131,8 @@ input{
 .ftTop > ul > li > a > button{
     display: block;
     float: right;
-    padding-right: 40px;
+    margin-right: 28px;
+    transition-duration: 500ms;
 }
 .ftTop > ul > li > a > button > span{display: none;}
 .ftTop > ul > li:nth-child(1) > a > button{
@@ -1059,26 +1149,44 @@ input{
 }
 .ftSub{
     width: 400px;
-    height: 300px;
+    /* height: 300px; */
+    height: 0;
     background-color: white;
     position: absolute;
-    top: -303px;
+    /* top: -303px; */
+    top: 0;
     left: -1px;
     overflow: hidden scroll;
     color: #333333;
     border-left: 1px solid #e3e3e3;
     border-top: 1px solid #e3e3e3;
     border-right: 1px solid #e3e3e3;
+    transition-duration: 500ms;
+    box-sizing: border-box;
 }
 .ftSub > li{
-    height: 24px;
+    height: 50px;
     padding: 5px 0;
     padding-left: 30px;
 }
-.ftSub1{display: none;}
-/* .ftSub2{display: none;} */
+.ftSub > li:hover{
+    background-color: rgb(240, 240, 240);
+}
+.ftSub1{visibility: hidden; width: 402px;}
+.ftSub2{visibility: hidden;}
 .ftSub2{
     width: 398px;
+}
+.reverseToggleSub1{
+    height: 300px;
+    top: -303px;
+    transition-duration: 500ms;
+    visibility: visible;
+    box-sizing: border-box;
+}
+.ftButtonToggle{
+    transform: rotate(180deg);
+    transition-duration: 500ms;
 }
 .ftSub::-webkit-scrollbar{width: 8px;}
 .ftSub::-webkit-scrollbar-thumb{
@@ -1108,6 +1216,7 @@ input{
     float: left;
 }
 .ftMid > ul > li > a > span{padding: 0 5px;}
+.ftMid > ul > li > a:hover{font-weight: 400;}
 .ftBot{
     width: 1200px;
     margin: 0 auto;

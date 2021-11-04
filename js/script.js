@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
         timerId = window.setInterval(nextSlide, offsetTime);
     });
     left1.addEventListener("click", function () {
-        if(page3Slide.style.left == "-100%") return;
+        if(page3Slide.style.transitionDuration == duration + "ms") return;
         window.clearInterval(timerId);
         prevSlide();
         timerId = window.setInterval(nextSlide, offsetTime);
@@ -68,6 +68,9 @@ window.addEventListener("load", function () {
             page3Slide.style.transition = duration + "ms";
             page3Slide.style.left = "0";
         }, 10);
+        window.setTimeout(function() {
+            page3Slide.removeAttribute("style");
+        }, duration);
     }
     
 
@@ -85,7 +88,7 @@ window.addEventListener("load", function () {
         timerId2 = window.setInterval(nextSlide2, offsetTime);
     });
     left2.addEventListener("click", function () {
-        if(page4Slide.style.left == "-100%") return;
+        if(page4Slide.style.transitionDuration == duration + "ms") return;
         window.clearInterval(timerId2);
         prevSlide2();
         timerId2 = window.setInterval(nextSlide2, offsetTime);
@@ -121,6 +124,9 @@ window.addEventListener("load", function () {
             page4Slide.style.transition = duration + "ms";
             page4Slide.style.left = "0";
         }, 10);
+        window.setTimeout(function() {
+            page4Slide.removeAttribute("style");
+        }, duration);
     }
 
     //-------------------------------------------------------------------------------------------------------------
@@ -141,7 +147,7 @@ window.addEventListener("load", function () {
             timerId3 = window.setInterval(doSlide, offsetTime);
         });
         leftSmall.addEventListener("click", function () {
-            if(page5Slide.firstElementChild.style.left == "-100%" || page5Slide.firstElementChild.style.left == "100%") return;
+            if(page5Slide.firstElementChild.style.transitionDuration == duration + "ms") return;
             window.clearInterval(timerId3);
             reverseDoSlide();
             timerId3 = window.setInterval(doSlide, offsetTime);
@@ -213,8 +219,11 @@ window.addEventListener("load", function () {
             page5Slide.firstElementChild.style.transition = duration + "ms";
             page5Slide.firstElementChild.style.left = "0";
         }, 10);
+        window.setTimeout(function () {
+            page5Slide.firstElementChild.removeAttribute("style");
+        }, duration);
     }
-
+    
     // 역방향 오른쪽 슬라이드 함수
     function reverseRightSlide() {
         page5Slide.removeAttribute("style");
@@ -225,6 +234,9 @@ window.addEventListener("load", function () {
             page5Slide.firstElementChild.style.transition = duration + "ms";
             page5Slide.firstElementChild.style.left = "0";
         }, 10);
+        window.setTimeout(function () {
+            page5Slide.firstElementChild.removeAttribute("style");
+        }, duration);
     }
 
     // 하단 숫자 변경 함수

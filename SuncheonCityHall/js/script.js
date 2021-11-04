@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
     let timerId1;
+    let timerId3;
 
     // 유틸리티 토글기능
     let slideUp = function (target, duration) {
@@ -72,7 +73,20 @@ window.addEventListener("load", function () {
             return slideUp(target, duration);
         }
     }
-
+    let slideToggle1 = function (target, duration) {
+        window.clearTimeout(timerId1);
+        if (window.getComputedStyle(target).display === "none") {
+            document.querySelector(".languageButton").style.transform = "rotate(180deg)";
+            document.querySelector(".languageButton").style.transitionDuration = duration + "ms";
+            return slideDown(target, duration);
+        } else {
+            document.querySelector(".languageButton").style.transform = "rotate(0deg)";
+            document.querySelector(".languageButton").style.transitionDuration = duration + "ms";
+            return slideUp(target, duration);
+        }
+    }
+    
+    
     const durationSpeed = 400;
     const targetId = document.querySelector(".languageSub");
     
@@ -82,13 +96,14 @@ window.addEventListener("load", function () {
         });
     }
     
+    
     // 유틸리티 마우스리브 이벤트
     targetId.addEventListener("mouseleave", function () {
-        slideToggle(targetId, durationSpeed);
+        slideToggle1(targetId, durationSpeed);
     });
 
     // 유틸리티 클릭 이벤트
-    slideClick(".langButton", slideToggle);
+    slideClick(".langButton", slideToggle1);
 
     // ----------------------------------------------------------------------------------
     // 네비게이션
@@ -182,13 +197,51 @@ window.addEventListener("load", function () {
     // mainSlide
     const mainSlide = document.querySelector(".mainSlide > ul");
     const slideBullet = document.querySelectorAll(".slideBullet > ul > li > a");
-    let index = 0;
+    const slideLeftButton = document.querySelector(".slideLeftButton");
+    const slideRightButton = document.querySelector(".slideRightButton");
+    const slideStart = document.querySelector(".slideStart");
     let mainSlideCount = document.querySelectorAll(".mainSlide > ul > li").length;
+    let index = 0;
     const offsetTime = 3000;
     const duration = 600;
 
-    window.setInterval(doSlideRight, offsetTime);
+    // 슬라이드 클릭 이벤트
+    slideRightButton.addEventListener("click", function () {
+        if(mainSlide.style.left === "-100%") return;
+        window.clearInterval(timerId4);
+        doSlideRight();
+        timerId4 = window.setInterval(doSlideRight, offsetTime);
+    });
+    slideLeftButton.addEventListener("click", function () {
+        if(mainSlide.style.transitionDuration === duration + "ms") return;
+        window.clearInterval(timerId4);
+        doSlideLeft();
+        timerId4 = window.setInterval(doSlideRight, offsetTime);
+    });
+    slideStart.addEventListener("click", function () {
+        this.classList.toggle("stopOn");
+        if(this.classList.contains("stopOn")){
+            window.clearInterval(timerId4);
+        }
+        else{
+            timerId4 = window.setInterval(doSlideRight, offsetTime);
+        }
+    });
 
+    // 슬라이드 후버 이벤트
+    mainSlide.addEventListener("mouseenter",function () {
+        slideStart.classList.add("stopOn");
+        window.clearInterval(timerId4);
+    });
+    mainSlide.addEventListener("mouseleave",function () {
+        slideStart.classList.remove("stopOn");
+        timerId4 = window.setInterval(doSlideRight, offsetTime);
+    });
+
+    let timerId4 = window.setInterval(doSlideRight, offsetTime);
+
+
+    
     for(let m = 0; m < slideBullet.length; m++){
         slideBullet[m].addEventListener("click", function (event) {
             event.preventDefault();
@@ -222,35 +275,52 @@ window.addEventListener("load", function () {
                 }
                 window.setTimeout(function () {
                     mainSlide.style.left = 0;
-                }, 1); // settimeout
+                }, 10); // settimeout
             }
         });
     }
 
     // 오른쪽 슬라이드함수
     function doSlideRight() {
-        for(let n = 0; n < slideBullet.length; n++){
-            slideBullet[n].classList.remove("on");
-        }
+        
+        index++;
+        index %= mainSlideCount;
+        
         mainSlide.style.left = "-100%";
         mainSlide.style.transitionDuration = duration + "ms";
         window.setTimeout(function () {
             mainSlide.appendChild(mainSlide.firstElementChild)
             mainSlide.removeAttribute("style");
         }, duration);
-        index++;
-        index %= mainSlideCount;
+        
+        for(let n = 0; n < slideBullet.length; n++){
+            slideBullet[n].classList.remove("on");
+        }
+
         slideBullet[index].classList.add("on");
     }
 
     function doSlideLeft() {
-        mainSlide.removeAttribute("style");
+        
+        index--;
+        if(index < 0) index = 2;
+        // index %= -mainSlideCount;
+
         mainSlide.insertBefore(mainSlide.lastElementChild, mainSlide.firstElementChild)
         mainSlide.style.left = "-100%";
         window.setTimeout(function () {
             mainSlide.style.left = "0";
             mainSlide.style.transitionDuration = duration + "ms";
+        }, 10);
+        window.setTimeout(function () {
+            mainSlide.removeAttribute("style");
         }, duration);
+
+        for(let n = 0; n < slideBullet.length; n++){
+            slideBullet[n].classList.remove("on");
+        }
+
+        slideBullet[index].classList.add("on");
     }
 
     function bullet() {
@@ -271,7 +341,7 @@ window.addEventListener("load", function () {
         doSlideQuickRight();
     });
     quickLeft.addEventListener("click", function () {
-        if(quickList.style.left == "-240px") return
+        if(quickList.style.transitionDuration == "400ms") return
         doSlideQuickLeft();
     });
 
@@ -294,6 +364,9 @@ window.addEventListener("load", function () {
             quickList.style.transition = "400ms";
             quickList.style.left = "-120px";
         }, 10);
+        window.setTimeout(function () {
+            quickList.removeAttribute("style");
+        }, 400);
     }
     // ---------------------------------------------------------------------------------------------
     // notice
@@ -307,13 +380,141 @@ window.addEventListener("load", function () {
             noticeA[u].classList.add("noticeOn");
             noticeSpan[u].style.display = "none";
             noticeSub[u].style.display = "block"
+            for(let bcd = 0; bcd < noticeA.length;bcd++){
+                if(noticeA[bcd].classList.contains("noticeOn") === true){
+                    noticeA[bcd].classList.remove("noticeOn");
+                    noticeSpan[bcd].style.display = "block";
+                    noticeSub[bcd].style.display = "none"
+                    noticeA[u].classList.add("noticeOn");
+                    noticeSpan[u].style.display = "none";
+                    noticeSub[u].style.display = "block"
+                }
+            }
         });
         notice[u].addEventListener("mouseleave", function () {
             noticeA[u].classList.remove("noticeOn");
             noticeSpan[u].style.display = "block";
-            noticeSub[u].removeAttribute("style");
+            noticeSub[u].style.display = "none"
+            for(let abc = 0; abc < noticeA.length; abc++){
+                if(noticeA[abc].classList.contains("noticeOn") != true){
+                    noticeA[u].classList.add("noticeOn");
+                    noticeSpan[u].style.display = "none";
+                    noticeSub[u].style.display = "block";
+                }
+            }
         });
     }
+
+    // ---------------------------------------------------------------------------------------------
+    // suncheonNews
+    const newsList = document.querySelector(".newsList");
+    const newsListLi = document.querySelectorAll(".newsList > li");
+    const newsListImg = document.querySelectorAll(".newsList > li > a > img");
+    const newsRight = document.querySelector(".newsright");
+    const newsLeft = document.querySelector(".newsLeft");
+    let timerId2;
+    
+    // 슬라이드 클릭 이벤트
+    newsRight.addEventListener("click", function() {
+        if(newsList.style.left == "-690px") return
+        window.clearInterval(timerId2);
+        doSlideNewsRight();
+        timerId2 = window.setInterval(doSlideNewsRight, offsetTime);
+    });
+    newsLeft.addEventListener("click", function () {
+        if(newsList.style.transitionDuration == duration + "ms") return
+        window.clearInterval(timerId2);
+        doSlideNewsLeft();
+        timerId2 = window.setInterval(doSlideNewsRight, offsetTime);
+    });
+
+    // 슬라이드 후버 멈춤 이벤트
+    newsList.addEventListener("mouseenter", function () {
+        window.clearInterval(timerId2);
+    });
+    newsList.addEventListener("mouseleave", function () {
+        timerId2 = window.setInterval(doSlideNewsRight, offsetTime);
+    });
+    for(let p = 0; p < newsListLi.length; p++){
+        newsListLi[p].addEventListener("mouseenter", function () {
+            newsListImg[p].style.opacity = "0.6";
+            newsListImg[p].style.transitionDuration = duration + "ms";
+        });
+        newsListLi[p].addEventListener("mouseleave", function () {
+            newsListImg[p].style.opacity = "1";
+            newsListImg[p].style.transitionDuration = duration + "ms";
+        });
+
+    }
+
+    timerId2 = window.setInterval(doSlideNewsRight, offsetTime);
+
+    // 슬라이드 함수
+    function doSlideNewsRight() {
+        newsList.style.left = "-690px";
+        newsList.style.transitionDuration = duration + "ms";
+        window.setTimeout(function () {
+            newsList.removeAttribute("style");
+            newsList.appendChild(newsList.firstElementChild);
+        }, duration);
+    }
+    function doSlideNewsLeft() {
+        newsList.removeAttribute("style");
+        newsList.insertBefore(newsList.lastElementChild, newsList.firstElementChild);
+        newsList.style.left = "-690px";
+        window.setTimeout(function () {
+            newsList.style.left = "-330px";
+            newsList.style.transitionDuration = duration + "ms";
+        }, 10);
+        window.setTimeout(function () {
+            newsList.removeAttribute("style");
+        }, duration);
+    }
+    // ---------------------------------------------------------------------------------------------
+    // touristAttraction
+    const touristAttraction = document.querySelector(".touristAttraction > h4");
+
+    touristAttraction.addEventListener("mouseenter", function () {
+        this.style.transitionDuration = "400ms";
+        this.style.transform = "scale(1.05)";
+    });
+    touristAttraction.addEventListener("mouseleave", function () {
+        this.style.transitionDuration = "400ms";
+        this.style.transform = "scale(1)";
+    });
+    
+    // ---------------------------------------------------------------------------------------------
+    // footer
+    const ftButton2= document.querySelector(".ftButton2");
+    const ftButton3= document.querySelector(".ftButton3");
+    const ftSub1 = document.querySelector(".ftSub1");
+    const ftSub2 = document.querySelector(".ftSub2");
+    const ftTopLi = this.document.querySelectorAll(".ftTop > ul > li");
+    const ftTop = document.querySelectorAll(".ftTop > ul > li > a");
+
+    for (let b = 0; b < ftTop.length; b++){
+        ftTop[b].addEventListener("click", function (event) {
+            event.preventDefault();
+        });
+    }
+
+    ftTopLi[1].addEventListener("click", function () {
+        ftSub1.classList.toggle("reverseToggleSub1");
+        ftButton2.classList.toggle("ftButtonToggle");
+    });
+    ftSub1.addEventListener("mouseleave", function () {
+        this.classList.remove("reverseToggleSub1");
+        ftButton2.classList.toggle("ftButtonToggle");
+    });
+    ftTopLi[2].addEventListener("click", function () {
+        ftSub2.classList.toggle("reverseToggleSub1");
+        ftButton3.classList.toggle("ftButtonToggle");
+    });
+    ftSub2.addEventListener("mouseleave", function () {
+        this.classList.remove("reverseToggleSub1");
+        ftButton3.classList.toggle("ftButtonToggle");
+    });
+
 
     // ---------------------------------------------------------------------------------------------
 
