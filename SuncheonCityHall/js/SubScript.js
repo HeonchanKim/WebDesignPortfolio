@@ -183,6 +183,95 @@ window.addEventListener("load", function () {
     KeywordHoverEvent(firstBlockKeyword);
     KeywordHoverEvent(secondBlockKeyword);
     // ---------------------------------------------------------------------------------------------
+    // sidebar
+    const sidebar = document.querySelectorAll("#sidebar > ul > li > a");
+    const sidebarSub = document.querySelectorAll("#sidebar > ul > li > .sidebarSub");
+    
+    let slideUp3 = function (target, duration) {
+        target.style.transitionProperty = "height, margin, padding";
+        target.style.transitionDuration = duration + "ms";
+        target.style.boxSizing = "border-box";
+        target.style.height = target.offsetHeight + "px";
+        target.style.overflow = "hidden";
+        target.style.height = 0;
+        target.style.paddingTop = 0;
+        target.style.paddingBottom = 0;
+        target.style.marginTop = 0;
+        target.style.marginBottom = 0;
+        
+        timerId3 = window.setTimeout(removeSlideUp, duration);
+
+        function removeSlideUp() {
+            target.style.display = "none";
+            target.style.removeProperty("height");
+            target.style.removeProperty("padding-top");
+            target.style.removeProperty("padding-bottom");
+            target.style.removeProperty("margin-top");
+            target.style.removeProperty("margin-bottom");
+            target.style.removeProperty("overflow");
+            target.style.removeProperty("transition-duration");
+            target.style.removeProperty("transition-property");
+        }
+    }
+
+    let slideDown3 = function (target, duration) {
+        target.style.removeProperty("display");
+        let display = window.getComputedStyle(target).display;
+        
+        if (display === "none")
+        display = "block";
+        
+        target.style.display = display;
+        let height = target.offsetHeight;
+        target.style.overflow = "hidden";
+        target.style.height = 0;
+        target.style.paddingTop = 0; 
+        target.style.paddingBottom = 0; 
+        target.style.marginTop = 0; 
+        target.style.marginBottom = 0; 
+        target.offsetHeight;
+        target.style.boxSizing = "border-box";
+        target.style.transitionProperty = "height, margin, padding";
+        target.style.transitionDuration = duration + "ms";
+        target.style.height = height + "px";
+        target.style.removeProperty("padding-top");
+        target.style.removeProperty("padding-bottom");
+        target.style.removeProperty("margin-top");
+        target.style.removeProperty("margin-bottom");
+        
+        timerId3= window.setTimeout(removeSlideDown, duration);
+
+        function removeSlideDown() {
+            target.style.removeProperty("height");
+            target.style.removeProperty("overflow");
+            target.style.removeProperty("transition-duration");
+            target.style.removeProperty("transition-property");
+        }
+    }
+
+
+
+    for(let q = 0; q < sidebar.length; q++){
+        sidebar[q].addEventListener("click", function (event) {
+            event.preventDefault();
+            window.clearTimeout(timerId3);
+            if (window.getComputedStyle(sidebarSub[q]).display === "none") {
+                if(sidebarSub[q].children.length >= 1){
+                    sidebar[q].style.backgroundColor = "#f6f6f6";
+                    sidebar[q].style.transitionDuration = "500ms";
+                }
+                return slideDown3(sidebarSub[q], 800);
+            }
+            else {
+                sidebar[q].removeAttribute("style");
+                sidebar[q].style.backgroundColor = "white";
+                sidebar[q].style.transitionDuration = "500ms";
+                return slideUp3(sidebarSub[q], 800);
+            }
+        });
+    }
+        
+    // ---------------------------------------------------------------------------------------------
     // footer
     const ftButton2= document.querySelector(".ftButton2");
     const ftButton3= document.querySelector(".ftButton3");

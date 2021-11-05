@@ -334,10 +334,17 @@ input{
     margin-bottom: 24px;
     float: left;
 }
+/* content---------------------------------- */
+.content{
+    width: 1200px;
+    height: 1400px;
+    margin: 0 auto;
+}
 /* sidebar---------------------------------- */
 #sidebar{
-    width: 1200px;
+    width: 250px;
     margin: 0 auto;
+    float: left;
 }
 #sidebar > h2{
     width: 250px;
@@ -357,18 +364,195 @@ input{
 }
 #sidebar > ul > li{
     width: 250px;
-    height: 60px;
+}
+#sidebar > ul > li > a{
+    display: block;
     box-sizing: border-box;
     padding-left: 30px;
     line-height: 60px;
     border: 1px solid #bababa;
     border-style: solid none;
 }
+#sidebar > ul > li:first-child > a{background-color: #f6f6f6;}
 #sidebar > ul > li > a > span{
     padding-right: 15px;
     float: right;
 }
-.sidebarSub{display: none;}
+.sidebarSub{
+    display: none;
+    width: 250px;
+    padding: 18px 0;
+    padding-left: 50px;
+    list-style: circle;
+    box-sizing: border-box;
+    /* transition: 500ms; */
+}
+.sidebarSub1{height: 176px; display: block;}
+.sidebarSub2{padding: 0;}
+.sidebarSub3{padding: 0;}
+.sidebarSub4{height: 141px;}
+.sidebarSub5{padding: 0;}
+.sidebarSub6{height: 71px;}
+.sidebarSub7{height: 246px;}
+.sidebarSub8{padding: 0;}
+.sidebarSub > li{
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 200;
+    box-sizing: border-box;
+}
+.sidebarSub > li > a{display: block;}
+.sidebarSub1 > li:first-child > a{
+    font-weight: 500;
+    color: #1471ac;
+}
+/* main---------------------------------- */
+.main{
+    width: 890px;
+    float: right;
+}
+/* top---------------------------------- */
+.top{
+    width: auto;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 46px;
+    box-sizing: border-box;
+}
+.top > h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+.top > h3{
+    height: 35px;
+    padding-top: 27px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.top > h3 > img{
+    position: relative;
+    top: 4px;
+    right: 10px;
+}
+.top > ul{
+    height: 41px;
+    float: right;
+}
+.top > ul > li{
+    float: left;
+    transition: 500ms;
+}
+.top > ul > li:hover{
+    opacity: 0.7;
+    transition: 500ms;
+}
+.top > ul > li:not(:last-child){
+    padding-right: 24px;
+}
+/* mid---------------------------------- */
+.mid{
+    width: 890px;
+    text-align: center;
+}
+.mid > table{
+    width: 890px;
+}
+.mid > table > thead{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 63px;
+    border: 2px solid #909090;
+    border-style: solid none;
+}
+.mid > table > tbody{
+    font-size: 16px;
+    font-weight: 200;
+}
+.mid > table > tbody > tr{
+    line-height: 65px;
+    border: 1px solid #909090;
+    border-style: solid none;
+}
+.mid > table > tbody > tr > td > a{
+    display: block;
+    text-align: left;
+    padding-left: 40px;
+}
+.mid > table > tbody > tr > td > a:hover{
+    text-decoration: underline;
+}
+/* bottom---------------------------------- */
+.bottom{
+    width: 890px;
+    height: 150px;
+    padding-top: 28px;
+    box-sizing: border-box;
+}
+.bottom_top{
+    width: auto;
+    height: 40px;
+    float: right;
+}
+.bottom_top > form{
+    width: auto;
+    height: 40px;
+}
+.search_Tab{
+    width: 80px;
+    height: 40px;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-right: 18px;
+}
+.search_Box{
+    width: 210px;
+    height: 40px;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+}
+.search_Button{
+    width: 40px;
+    height: 40px;
+    background: url("../images/subSearch.png");
+    display: block;
+    float: left;
+    cursor: pointer;
+    transition: 500ms;
+}
+.search_Button:hover{
+    opacity: 0.7;
+    transition: 500ms;
+}
+.bottom_bottom{
+    width: 890px;
+    height: 33px;
+    clear: both;
+    padding-top: 28px;
+}
+.bottom_bottom > ul{
+    width: 403px;
+    height: 33px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+.bottom_bottom > ul > li{
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    float: left;
+}
+.bottom_bottom > ul > li:first-child{
+    color: white;
+    background-color: #7e9dcd;
+}
 /* ----------------------- 푸터영역 ---------------------------------------- */
 #footer{
     width: 100%;
