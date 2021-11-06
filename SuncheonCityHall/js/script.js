@@ -257,25 +257,25 @@ window.addEventListener("load", function () {
                 slideBullet[q].classList.remove("on");
             }
             slideBullet[index].classList.add("on");
-
+            
             if(step > 0) {
                 mainSlide.style.left = step * (-100) + "%";
                 mainSlide.style.transitionDuration = duration + "ms";
                 window.setTimeout(function () {
-                    for(let w = 0; w < mainSlide.length; w++){
+                    for(let w = 0; w < mainSlide.children.length; w++){
                         mainSlide.removeAttribute("style");
                         mainSlide.append(mainSlide.children.item(m < step));
                     }
                 }, duration);
             }else{
                 let e = (mainSlideCount - 1) + step;
-                for(let r = 0; r < mainSlide.length; r++){
-                    mainSlide.children.item(r > e).prepend(mainSlide);
-                    mainSlide.style.left = step * 100 + "%";
+                for(let r = 0; r < mainSlide.children.length; r++){
+                    mainSlide.prepend(mainSlide.children.item(r > e));
                 }
+                mainSlide.style.left = step * 100 + "%";
                 window.setTimeout(function () {
                     mainSlide.style.left = 0;
-                }, 10); // settimeout
+                }, duration); // settimeout
             }
         });
     }
