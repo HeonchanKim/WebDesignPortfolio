@@ -254,10 +254,45 @@ window.addEventListener("load", function () {
     }
 
     //-------------------------------------------------------------------------------------------------------------
-
     // 스크롤링
+/*
+    window.addEventListener("wheel", function(event) {
+        event.preventDefault();
+    },{passive:false});
 
-    /*
+    const html = document.querySelector("html");
+    let pageNo = 1;
+    let lastPageNo = document.querySelectorAll(".page").length;
+
+    // html.scrollTop = 0;
+
+    window.onwheel = function(event) {
+
+        let delta = event.deltaY;
+
+        if(delta > 0){
+            if(pageNo == lastPageNo) return;
+            pageNo++;
+        }else{
+            if(pageNo == 1) return;
+            pageNo--;
+        }
+
+        let scrollTo1 = window.innerHeight * (pageNo - 1);
+
+        html.scrollTo({top:scrollTo1, behavior: "smooth"})
+        // window.setTimeout(function () {
+        //     html.transitionDuration
+        //     html.scrollTop = scrollTo;
+        // }, 500)
+    }
+
+*/
+
+
+
+
+    
     let html = document.querySelector("html");
     
     window.addEventListener("wheel", function(event) {
@@ -266,14 +301,18 @@ window.addEventListener("load", function () {
     
     
     window.onwheel = function (event){
+        if(html.style.scrollBehavior == "smooth") return;
         let delta = event.deltaY;
-
+        
         if (delta > 0){
             nextPage();
         }else{
             prevPage();
         }
     };
+
+
+    
     // 다음 페이지
     function nextPage () {
         // 현재 페이지의 높이
@@ -303,7 +342,7 @@ window.addEventListener("load", function () {
         // 뺄셈의 결과가 변하지 않는다.
         dist -= overScroll;
 
-        html.animate({scrollY:dist});
+        html.scrollTo({top:dist, behavior:'smooth'})
         
         } // end of nextPage
 
@@ -333,7 +372,7 @@ window.addEventListener("load", function () {
 
         dist += overScroll;
 
-        html.animate({scrollY:dist});
+        html.scrollTo({top:dist, behavior:'smooth'})
     }
-    */
+    
 });
