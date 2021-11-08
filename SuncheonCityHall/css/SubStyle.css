@@ -468,7 +468,7 @@ input{
 }
 .mid > table > tbody{
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 400;
 }
 .mid > table > tbody > tr{
     line-height: 65px;
@@ -606,7 +606,7 @@ input{
     margin-top: 20.5px;
 }
 .ftSub{
-    width: 400px;
+    /* width: 400px; */
     /* height: 300px; */
     height: 0;
     background-color: white;
@@ -631,10 +631,7 @@ input{
     background-color: rgb(240, 240, 240);
 }
 .ftSub1{visibility: hidden; width: 402px;}
-.ftSub2{visibility: hidden;}
-.ftSub2{
-    width: 398px;
-}
+.ftSub2{visibility: hidden; width: 400px;}
 .reverseToggleSub1{
     height: 300px;
     top: -303px;
@@ -691,6 +688,7 @@ input{
     box-sizing: border-box;
     margin-left: 75px;
     margin-top: 42px;
+    line-height: 1.5;
 }
 .ftBot > ul{
     margin-top: 20px;

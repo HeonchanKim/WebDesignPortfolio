@@ -260,13 +260,13 @@ window.addEventListener("load", function () {
                     sidebar[q].style.backgroundColor = "#f6f6f6";
                     sidebar[q].style.transitionDuration = "500ms";
                 }
-                return slideDown3(sidebarSub[q], 800);
+                return slideDown3(sidebarSub[q], 500);
             }
             else {
                 sidebar[q].removeAttribute("style");
                 sidebar[q].style.backgroundColor = "white";
                 sidebar[q].style.transitionDuration = "500ms";
-                return slideUp3(sidebarSub[q], 800);
+                return slideUp3(sidebarSub[q], 500);
             }
         });
     }

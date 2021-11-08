@@ -560,107 +560,93 @@ input{
     position: relative;
 }
 .quickList > li > a{
+    width: 120px;
+    height: 127px;
     display: block;
-}
-.quickList > li > a > span{
-    display: block;
+    margin: 0 auto;
     white-space: nowrap;
-    padding-top: 18px;
+    text-align: center;
+    padding-top: 95px;
+    box-sizing: border-box;
 }
-.quickList > li:nth-of-type(1) > a::before{
-    content: "";
+
+/* .quickList > li > a > span{
     display: block;
-    background: url("../images/mainQuick1.png") no-repeat;
+    padding-top: 98px;
+    width: 80px;
+    height: 80px;
+} */
+.quickIcon1{
+    display: block;
+    background: url("../images/mainQuick1.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(2) > a::before{
-    content: "";
+.quickIcon2{
     display: block;
-    background: url("../images/mainQuick2.png") no-repeat;
+    background: url("../images/mainQuick2.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(3) > a::before{
-    content: "";
+.quickIcon3{
     display: block;
-    background: url("../images/mainQuick3.png") no-repeat;
+    background: url("../images/mainQuick3.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(4) > a::before{
-    content: "";
+.quickIcon4{
     display: block;
-    background: url("../images/mainQuick4.png") no-repeat;
+    background: url("../images/mainQuick4.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(5) > a::before{
-    content: "";
+.quickIcon5{
     display: block;
-    background: url("../images/mainQuick5.png") no-repeat;
+    background: url("../images/mainQuick5.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(6) > a::before{
-    content: "";
+.quickIcon6{
     display: block;
-    background: url("../images/mainQuick6.png") no-repeat;
+    background: url("../images/mainQuick6.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(7) > a::before{
-    content: "";
+.quickIcon7{
     display: block;
-    background: url("../images/mainQuick7.png") no-repeat;
+    background: url("../images/mainQuick7.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(8) > a::before{
-    content: "";
+.quickIcon8{
     display: block;
-    background: url("../images/mainQuick8.png") no-repeat;
+    background: url("../images/mainQuick8.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(9) > a::before{
-    content: "";
+.quickIcon9{
     display: block;
-    background: url("../images/mainQuick9.png") no-repeat;
+    background: url("../images/mainQuick9.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(10) > a::before{
-    content: "";
+.quickIcon10{
     display: block;
-    background: url("../images/mainQuick10.png") no-repeat;
+    background: url("../images/mainQuick10.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(11) > a::before{
-    content: "";
+.quickIcon11{
     display: block;
-    background: url("../images/mainQuick11.png") no-repeat;
+    background: url("../images/mainQuick11.png") no-repeat center top;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    margin-left: 20px;
 }
-.quickList > li:nth-of-type(12) > a::before{
-    content: "";
+.quickIcon12{
     display: block;
-    background: url("../images/mainQuick12.png") no-repeat;
-    width: 80px;
-    height: 80px;
+    background: url("../images/mainQuick12.png") no-repeat center top;
+    margin: 0 auto;
+    margin-left: 20px;
 }
 /* Section4---------------------------------- */
 .informationBlock{
@@ -744,13 +730,8 @@ input{
     font-weight: 400;
     line-height: 1;
 }
-.noticeSub > li > a{
-    transition-duration: 500ms;
-}
 .noticeSub > li:not(:first-child) > a:hover{
-    font-size: 17px;
-    /* font-weight: 500; */
-    transition-duration: 500ms;
+    text-decoration: underline;
 }
 .noticeSub > li:nth-of-type(1){
     padding-top: 29px;
@@ -834,11 +815,9 @@ input{
 }
 .informationByField > ul > li > a > span{
     display: block;
-    transition-duration: 500ms;
 }
 .informationByField > ul > li > a > span:hover{
-    opacity: 0.5;
-    transition-duration: 500ms;
+    font-weight: 500;
 }
 .informationByField > ul > li:nth-of-type(1) > a > span::before{
     content: "";
@@ -1173,10 +1152,7 @@ input{
     background-color: rgb(240, 240, 240);
 }
 .ftSub1{visibility: hidden; width: 402px;}
-.ftSub2{visibility: hidden;}
-.ftSub2{
-    width: 398px;
-}
+.ftSub2{visibility: hidden; width: 400px;}
 .reverseToggleSub1{
     height: 300px;
     top: -303px;
@@ -1231,6 +1207,7 @@ input{
     float: left;
     font-size: 16px;
     box-sizing: border-box;
+    line-height: 1.5;
     margin-left: 75px;
     margin-top: 42px;
 }

@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
     // 2페이지
     const skill = document.querySelectorAll(".skill_item > li > span > span");
 
-    window.addEventListener("wheel", function() {
+    window.addEventListener("scroll", function() {
         if(window.scrollY >= 800 && window.scrollY < 1700){
             for(let i = 0; i < skill.length; i++){
                 skill[i].style.transitionDelay = (i * 0.1) + "s";
@@ -290,18 +290,12 @@ window.addEventListener("load", function () {
 */
 
 
-
-
     
     let html = document.querySelector("html");
     
     window.addEventListener("wheel", function(event) {
         event.preventDefault();
-    },{passive:false});
-    
-    
-    window.onwheel = function (event){
-        if(html.style.scrollBehavior == "smooth") return;
+        // if(html.style.scrollBehavior == "smooth") return;
         let delta = event.deltaY;
         
         if (delta > 0){
@@ -309,8 +303,10 @@ window.addEventListener("load", function () {
         }else{
             prevPage();
         }
-    };
-
+    },{passive:false});
+    
+    
+    
 
     
     // 다음 페이지
@@ -342,7 +338,8 @@ window.addEventListener("load", function () {
         // 뺄셈의 결과가 변하지 않는다.
         dist -= overScroll;
 
-        html.scrollTo({top:dist, behavior:'smooth'})
+        window.scrollTo({top:dist, behavior:'smooth'})
+        // window.scrollTo(0, dist)
         
         } // end of nextPage
 
@@ -372,7 +369,7 @@ window.addEventListener("load", function () {
 
         dist += overScroll;
 
-        html.scrollTo({top:dist, behavior:'smooth'})
+        window.scrollTo({top:dist, behavior:'smooth'})
     }
     
 });

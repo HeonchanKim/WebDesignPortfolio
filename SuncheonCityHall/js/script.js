@@ -248,7 +248,7 @@ window.addEventListener("load", function () {
             let clickedIndex = m;
 
             // 현재 a요소와 클릭된 a요소의 차이
-            let step = clickedIndex - index
+            let step = clickedIndex - index;
 
             if(step == 0) return;
             index = clickedIndex;
@@ -305,7 +305,6 @@ window.addEventListener("load", function () {
         index--;
         if(index < 0) index = 2;
         // index %= -mainSlideCount;
-
         mainSlide.insertBefore(mainSlide.lastElementChild, mainSlide.firstElementChild)
         mainSlide.style.left = "-100%";
         window.setTimeout(function () {
