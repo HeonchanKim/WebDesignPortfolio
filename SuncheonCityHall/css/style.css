@@ -371,7 +371,13 @@ input{
     margin: 0 auto;
     padding-top: 10px;
 }
-.mainSlide{width: 790px; height: 400px; overflow: hidden; float: left; z-index: -10;}
+.mainSlide{
+    width: 790px; 
+    height: 400px; 
+    /* overflow: hidden;  */
+    float: left; 
+    z-index: -10;
+}
 .mainSlide > ul{
     width: 300%; height: 100%;
     position: relative;

@@ -261,18 +261,25 @@ window.addEventListener("load", function () {
             if(step > 0) {
                 mainSlide.style.left = step * (-100) + "%";
                 mainSlide.style.transitionDuration = duration + "ms";
-                window.setTimeout(function () {
-                    for(let w = 0; w < mainSlide.children.length; w++){
-                        mainSlide.removeAttribute("style");
-                        mainSlide.append(mainSlide.children.item(m < step));
+                window.setTimeout(function() {
+                    mainSlide.removeAttribute("style");
+                    for(let g = 0; g < m; g++){
+                        mainSlide.appendChild(mainSlide.children.item(g));
                     }
-                }, duration);
+                },duration);
+                // window.setTimeout(function () {
+                //     for(let w = 0; w < mainSlide.children.length; w++){
+                //         mainSlide.removeAttribute("style");
+                //         mainSlide.append(mainSlide.children.item(m < step));
+                //     }
+                // }, duration);
             }else{
                 let e = (mainSlideCount - 1) + step;
-                for(let r = 0; r < mainSlide.children.length; r++){
-                    mainSlide.prepend(mainSlide.children.item(r > e));
+                for(let r = 0; r < e; r++){
+                    mainSlide.insertBefore(mainSlide.children.item(r),mainSlide.firstElementChild)
                 }
                 mainSlide.style.left = step * 100 + "%";
+                mainSlide.style.transitionDuration = duration + "ms";
                 window.setTimeout(function () {
                     mainSlide.style.left = 0;
                 }, duration); // settimeout
@@ -394,8 +401,8 @@ window.addEventListener("load", function () {
             noticeA[u].classList.remove("noticeOn");
             noticeSpan[u].style.display = "block";
             noticeSub[u].style.display = "none"
-            for(let abc = 0; abc < noticeA.length; abc++){
-                if(noticeA[abc].classList.contains("noticeOn") != true){
+            for(let g = 0; g < noticeA.length; g++){
+                if(noticeA[g].classList.contains("noticeOn") != true){
                     noticeA[u].classList.add("noticeOn");
                     noticeSpan[u].style.display = "none";
                     noticeSub[u].style.display = "block";

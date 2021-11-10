@@ -256,40 +256,9 @@ window.addEventListener("load", function () {
 
     //-------------------------------------------------------------------------------------------------------------
     // 스크롤링
-    /*
-    window.addEventListener("wheel", function(event) {
-        event.preventDefault();
-    },{passive:false});
 
     let html = document.querySelector("html");
-    let pageNo = 1;
-    let lastPageNo = document.querySelectorAll(".page").length;
 
-    // html.scrollTop = 0;
-
-    window.onwheel = function(event) {
-
-        let delta = event.deltaY;
-
-        if(delta > 0){
-            if(pageNo == lastPageNo) return;
-            pageNo++;
-        }else{
-            if(pageNo == 1) return;
-            pageNo--;
-        }
-
-        let scrollTo1 = window.innerHeight * (pageNo - 1);
-
-        html.scrollTo({top:scrollTo1, behavior: "smooth"})
-        // window.setTimeout(function () {
-        //     html.transitionDuration
-        //     html.scrollTop = scrollTo;
-        // }, 500)
-    }
-    */
-
-    let html = document.querySelector("html");
     window.addEventListener("wheel", function(event) {
         event.preventDefault();
         // if(window.scrollY > 0) return;
@@ -302,6 +271,8 @@ window.addEventListener("load", function () {
         }
     },{passive:false});
     
+
+
     // 다음 페이지
     function nextPage () {
         // 현재 페이지의 높이
@@ -331,21 +302,23 @@ window.addEventListener("load", function () {
         // 뺄셈의 결과가 변하지 않는다.
         dist -= overScroll;
 
-        let steps = 0;
-        // window.scrollTo({top:dist, behavior:'smooth'});
+        window.scrollTo({top:dist, behavior:'smooth'});
         // window.scrollTo(0, dist);
-        let TIMER = window.setInterval(function () {
-            steps += 15;
+
+        
+        let steps = 0;
+        function scrollNext() {
+            steps += 20;
             window.scrollTo(0, steps);
-            console.log(dist)
+            // console.log(dist)
             if(steps >= dist)
-                clearInterval(TIMER);
-        },10)
-        // function scrollNext() {
-        // }
-        // let TIMERID = setInterval(scrollNext, 10);
+                clearInterval(TIMERID);
+        }
+        let TIMERID = window.setInterval(scrollNext, 10);
         
         } // end of nextPage
+
+
 
     // 이전 페이지
     function prevPage() {

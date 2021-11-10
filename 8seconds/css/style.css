@@ -23,8 +23,14 @@ input{
     padding: 0;
     margin: 0;
 }
-.w1200{width: 1200px;}
+.w1200{width: 1200px; height: auto;}
 /* -----------------------------------------------헤더영역--------------------------------------------------------------------------------- */
+#header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 /* 로고 */
 #logo{
     width: 250px;
@@ -42,15 +48,17 @@ input{
 }
 /* 네비 */
 #nav{
+    width: 1200px;
     height: 100px;
     float: left;
     font-size: 20px;
     font-weight: 400;
+    color: white;
     text-align: center;
     margin: 0 auto;
 }
 #nav > ul{
-    width: 1200px;
+    width: 820px;
     height: 100px;
     margin: 0 auto;
 }
@@ -58,21 +66,58 @@ input{
     float: left;
     line-height: 100px;
 }
+#nav > ul > li:not(:last-child){
+    margin-right: 96px;
+}
 .sub{display: none;}
 #topIcon{
     width: 180px;
     height: 100px;
+    float: left;
+    margin-left: 45px;
 }
 #topIcon > li{
-    float: right;
+    padding-top: 37px;
+    float: left;
+}
+#topIcon > li:not(:last-child){
+    padding-right: 24px;
 }
 /* -----------------------------------------------슬라이드영역--------------------------------------------------------------------------------- */
 #slideSection{
     width: 100%;
-    height: 100%;
+    height: 892px;
+    position: relative;
 }
-.slideLeft{display: none;}
-.slideRight{display: none;}
+.slideLeft > span{display: none;}
+.slideRight > span{display: none;}
+
+.slideLeft, .slideRight{
+    width: 63px;
+    height: 125px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: 300ms;
+}
+.slideLeft{
+    background: url("../images/mainslideButtonLeft.png") no-repeat;
+    left: 2%;
+}
+.slideLeft:hover{
+    opacity: 0.5;
+    transition: 300ms;
+}
+.slideRight:hover{
+    opacity: 0.5;
+    transition: 300ms;
+}
+.slideRight{
+    background: url("../images/mainslideButtonRight.png") no-repeat;
+    right: 2%;
+}
+
 .slideContainer{
     width: 100%;
     height: 100%;
@@ -86,12 +131,163 @@ input{
     left: -100%;
 }
 .mainSlide > li{
+    width: 25%;
     float: left;
 }
+.mainSlide > li > a{
+    display: block;
+}
+.mainSlide > li > a > img{
+    display: block;
+    width: 100%;
+}
 /* -----------------------------------------------신상품영역--------------------------------------------------------------------------------- */
-#whatsNewSection{display: none;}
+#whatsNewSection{
+    height: auto;
+    margin: 0 auto;
+}
+#whatsNewSection > h2 {
+    font-size: 55px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 128px;
+}
+.newWrap{
+    width: 1200px;
+    height: 730px;
+    
+    margin-bottom: 44px;
+}
+.whatsNewLeft{display: none;}
+.whatsNewRight{display: none;}
+
+.whatsNewContainer{
+    width: 1200px;
+    height: 100%;
+    margin-top: 72px;
+    /* overflow: hidden; */
+}
+.whatsNewSlide{
+    width: 500%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.whatsNewSlide > li{
+    width: 400px;
+    height: 100%;
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 35px;
+}
+.whatsNewSlide > li > a{
+    display: block;
+    width: 400px;
+}
+.whatsNewImage{
+    width: 400px;
+    height: 550px;
+    display: block;
+    margin-bottom: 21px;
+}
+.whatsNewImage > img{
+    display: block;
+    width: 400px;
+    height: 550px;
+}
+.checkHeart{display: none;}
+
+.whatsNewPrice{
+    display: block;
+    width: 400px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 17px;
+}
+.whatsNewIcon{
+    display: block;
+    width: 400px;
+    height: 25px;
+    box-sizing: border-box;
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.whatsNewIcon > img:first-child{padding-right: 8px;}
+.whatsNewIcon > img:last-child{padding-left: 34px; padding-right: 10px;}
+.whatsNewColor{
+    display: block;
+    height: 20px;
+}
+.whatsNewColor > span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 11px;
+}
+.whatsNewColor1 > span:first-child{background-color: #ccecff;}
+.whatsNewColor1 > span:last-child{background-color: #111000;}
+.whatsNewColor2 > span:first-child{background-color: #ebceb1;}
+.whatsNewColor2 > span:last-child{background-color: #494949;}
+.whatsNewColor > span > span{display: none;}
+
+.viewMore{
+    width: 170px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 200;
+    font-size: 18px;
+    border: 1px solid #333333;
+    margin: 0 auto;
+}
+
 /* -----------------------------------------------쿠폰영역--------------------------------------------------------------------------------- */
-#couponSection{display: none;}
+#couponSection{
+    width: 100%;
+    height: 150px;
+    margin-top: 157px;
+}
+#couponSection > div{
+    width: 50%;
+    height: 150px;
+    float: left;
+}
+
+#couponSection h3{
+    font-size: 30px; 
+    font-weight: 700; 
+    margin-top: 52px; 
+    margin-bottom: 10px;
+}
+#couponSection h4{
+    font-size: 18px; 
+    font-weight: 400;
+}
+#couponSection a{
+    display: block; 
+    width: 600px; 
+    position: relative;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.couponContainer{background-color: #333333;}
+.coupon{width: 600px; height: 150px; float: right; color: white;}
+.coupon > a > img{
+    position: absolute;
+    top: 0;
+    right: 49px;
+}
+.reviewContainer{background-color: #d8c7b8;}
+.review{width: 600px; height: 150px; float: left;}
+.review > a > img{
+    position: absolute;
+    top: 0;
+    right: 49px;
+}
 /* -----------------------------------------------베스트상품영역--------------------------------------------------------------------------------- */
 #weeklyBestSection{display: none;}
 /* -----------------------------------------------기획전영역--------------------------------------------------------------------------------- */
