@@ -15,6 +15,8 @@ button{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 input{
     background-color: transparent;
@@ -23,12 +25,15 @@ input{
     padding: 0;
     margin: 0;
 }
-.w1200{width: 1200px; height: auto;}
 /* -----------------------------------------------헤더영역--------------------------------------------------------------------------------- */
+.w1200{width: 1200px; height: auto;}
 #header{
     width: 100%;
+    min-width: 1740px;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
 }
 /* 로고 */
@@ -48,7 +53,7 @@ input{
 }
 /* 네비 */
 #nav{
-    width: 1200px;
+    width: 820px;
     height: 100px;
     float: left;
     font-size: 20px;
@@ -56,6 +61,7 @@ input{
     color: white;
     text-align: center;
     margin: 0 auto;
+    margin-left: 150px;
 }
 #nav > ul{
     width: 820px;
@@ -143,7 +149,7 @@ input{
     width: 180px;
     height: 100px;
     float: left;
-    margin-left: 45px;
+    margin-left: 170px
 }
 #topIcon > li{
     padding-top: 37px;
@@ -167,7 +173,6 @@ input{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
     transition: 300ms;
 }
 .slideLeft{
@@ -224,17 +229,15 @@ input{
 .newWrap{
     width: 1200px;
     height: 730px;
-    
+    position: relative;
     margin-bottom: 44px;
 }
-.whatsNewLeft{display: none;}
-.whatsNewRight{display: none;}
 
 .whatsNewContainer{
     width: 1200px;
     height: 100%;
     margin-top: 72px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .whatsNewSlide{
     width: 500%;
@@ -249,8 +252,18 @@ input{
     float: left;
     font-size: 20px;
     font-weight: 400;
-    margin-right: 35px;
+    /* margin-right: 35px; */
 }
+
+.whatsNewSlide > li:not(:nth-of-type(2)){
+    transform: scale(0.8);
+}
+.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewPrice,
+.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewIcon,
+.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewText,
+.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewColor{display: none;}
+.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewImage > .checkHeart{display: none;}
+
 .whatsNewSlide > li > a{
     display: block;
     width: 400px;
@@ -272,6 +285,7 @@ input{
     bottom: 10px;
     right: 10px;
 }
+.whatsNewText{display: block;}
 
 .whatsNewPrice{
     display: block;
@@ -306,6 +320,27 @@ input{
 .whatsNewColor2 > span:first-child{background-color: #ebceb1;}
 .whatsNewColor2 > span:last-child{background-color: #494949;}
 .whatsNewColor > span > span{display: none;}
+
+.whatsNewRight, .whatsNewLeft{
+    width: 49px;
+    height: 97px;
+    transition-duration: 500ms;
+    position: absolute;
+    top: 30%;
+}
+.whatsNewLeft{background: url("../images/mainNewLeft.png"); left: -7%;}
+.whatsNewRight{background: url("../images/mainNewRight.png"); right: -7%;}
+.whatsNewLeft > span {display: none;}
+.whatsNewRight > span {display: none;}
+
+.whatsNewLeft:hover{
+    opacity: 0.7;
+    transition-duration: 500ms;
+}
+.whatsNewRight:hover{
+    opacity: 0.7;
+    transition-duration: 500ms;
+}
 
 .viewMore{
     width: 170px;
