@@ -8,7 +8,7 @@ window.addEventListener("load",function () {
     const logo = document.querySelector("#logo > a > img");
     const duration = 500;
 
-    // 헤더 hover 이벤트
+    // 네비 hover 이벤트
     header.addEventListener("mouseenter", headerChange);
     header.addEventListener("mouseleave", headerRemove);
     
@@ -18,7 +18,7 @@ window.addEventListener("load",function () {
             headerChange();
         }
         else{
-            headerRemove()
+            headerRemove();
         }
     });
     
