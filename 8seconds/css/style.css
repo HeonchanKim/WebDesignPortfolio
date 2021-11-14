@@ -73,6 +73,20 @@ input{
     line-height: 100px;
     position: relative;
 }
+#nav > ul > li > a::before{
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    width: 0px;
+    height: 3px;
+    background-color: white;
+    transition-duration: 300ms;
+    opacity: 0;
+}
+#nav > ul > li:hover > a::before {
+    width: 100%;
+    opacity: 1;
+}
 #nav > ul > li:not(:last-child){
     margin-right: 96px;
 }
@@ -81,12 +95,15 @@ input{
 .sub{
     position: absolute;
     top: 100px;
-    width: 1920px;
+    width: 2000px;
     height: 500px;
     background-color: #ededed;
     color: #333333;
     box-sizing: border-box;
     padding-left: 360px;
+    opacity: 0;
+    transition: 500ms;
+    overflow: hidden;
 }
 .subMen{
     left: -1208px;
@@ -142,9 +159,21 @@ input{
 }
 .subRightList > li{float: left;}
 .subRightList > li:not(:last-child){padding-right: 35px;}
-.subWomen{display: none;}
-.subMen{display: none;}
+.subWomen{visibility: hidden;}
+.subMen{visibility: hidden;}
 /* -------------------------------------------------------------------------------------------------------------------------------- */
+.shadowScreen{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 300ms;
+    z-index: -10;
+}
 #topIcon{
     width: 180px;
     height: 100px;
@@ -154,6 +183,8 @@ input{
 #topIcon > li{
     padding-top: 37px;
     float: left;
+    /* opacity: 1; */
+    transition-duration: 500ms;
 }
 #topIcon > li:not(:last-child){
     padding-right: 24px;
@@ -244,7 +275,7 @@ input{
     height: 100%;
     position: relative;
     top: 0;
-    left: 0;
+    left: -400px;
 }
 .whatsNewSlide > li{
     width: 400px;
@@ -253,16 +284,18 @@ input{
     font-size: 20px;
     font-weight: 400;
     /* margin-right: 35px; */
+    transition-duration: 300ms;
 }
 
-.whatsNewSlide > li:not(:nth-of-type(2)){
+.whatsNewSlide > li:not(:nth-of-type(3)){
     transform: scale(0.8);
+    transition-duration: 300ms;
 }
-.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewPrice,
-.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewIcon,
-.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewText,
-.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewColor{display: none;}
-.whatsNewSlide > li:not(:nth-of-type(2)) > a > .whatsNewImage > .checkHeart{display: none;}
+.whatsNewSlide > li:not(:nth-of-type(3)) > a > .whatsNewPrice,
+.whatsNewSlide > li:not(:nth-of-type(3)) > a > .whatsNewIcon,
+.whatsNewSlide > li:not(:nth-of-type(3)) > a > .whatsNewText,
+.whatsNewSlide > li:not(:nth-of-type(3)) > a > .whatsNewColor{display: none;}
+.whatsNewSlide > li:not(:nth-of-type(3)) > a > .whatsNewImage > .checkHeart{display: none;}
 
 .whatsNewSlide > li > a{
     display: block;
@@ -281,9 +314,13 @@ input{
     height: 550px;
 }
 .checkHeart{
+    display: block;
+    width: 44px;
+    height: 36px;
     position: absolute;
     bottom: 10px;
     right: 10px;
+    background: url("../images/mainNewIcon.png");
 }
 .whatsNewText{display: block;}
 
@@ -772,4 +809,23 @@ input{
     font-size: 14px;
     font-weight: 200;
     margin-top: 15px;
+}
+/* ------------------------------------------------------------------------------------------------------ */
+.on{
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    transition: 500ms;
+}
+.shadowOn{
+    opacity: 1;
+    visibility: visible;
+    transition-duration: 300ms;
+}
+.topIconOpacity{
+    opacity: 0.5;
+    transition-duration: 500ms;
+}
+.checkedHeart{
+    background: url("../images/mainbigHeart.png");
 }
