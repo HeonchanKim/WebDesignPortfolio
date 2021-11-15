@@ -29,12 +29,13 @@ input{
 .w1200{width: 1200px; height: auto;}
 #header{
     width: 100%;
-    min-width: 1740px;
+    min-width: 1750px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
+    transition-duration: 500ms;
 }
 /* 로고 */
 #logo{
@@ -69,10 +70,11 @@ input{
     margin: 0 auto;
 }
 #nav > ul > li{
+    position: relative;
     float: left;
     line-height: 100px;
-    position: relative;
 }
+#nav > ul > li > a{display: block;}
 #nav > ul > li > a::before{
     content: "";
     position: absolute;
@@ -91,8 +93,8 @@ input{
     margin-right: 96px;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------- */
-/* .sub{display: none;} */
 .sub{
+    display: none;
     position: absolute;
     top: 100px;
     width: 2000px;
@@ -101,7 +103,7 @@ input{
     color: #333333;
     box-sizing: border-box;
     padding-left: 360px;
-    opacity: 0;
+    /* opacity: 0; */
     transition: 500ms;
     overflow: hidden;
 }
@@ -159,8 +161,6 @@ input{
 }
 .subRightList > li{float: left;}
 .subRightList > li:not(:last-child){padding-right: 35px;}
-.subWomen{visibility: hidden;}
-.subMen{visibility: hidden;}
 /* -------------------------------------------------------------------------------------------------------------------------------- */
 .shadowScreen{
     position: fixed;
@@ -389,7 +389,10 @@ input{
     border: 1px solid #333333;
     margin: 0 auto;
 }
-
+.viewMore > a{display: block;}
+.viewMore > a:hover{
+    font-weight: 300;
+}
 /* -----------------------------------------------쿠폰영역--------------------------------------------------------------------------------- */
 #couponSection{
     width: 100%;
@@ -405,16 +408,15 @@ input{
 #couponSection h3{
     font-size: 30px; 
     font-weight: 700; 
-    margin-top: 52px; 
+    margin-top: 46px; 
     margin-bottom: 10px;
 }
 #couponSection h4{
     font-size: 18px; 
-    font-weight: 400;
+    font-weight: 200;
 }
 #couponSection a{
     display: block; 
-    width: 600px; 
     position: relative;
     padding-left: 50px;
     box-sizing: border-box;
@@ -436,36 +438,36 @@ input{
 }
 /* -----------------------------------------------베스트상품영역--------------------------------------------------------------------------------- */
 #weeklyBestSection{
-    height: 1600px;
+    height: 1650px;
     margin: 0 auto;
     margin-top: 156px;
 }
 #weeklyBestSection > h2{height: 70px;}
+#weeklyBestSection > h3{margin-top: 70px;}
 .bestList{
-    width: 440px;
-    height: 50px;
+    /* width: 440px; */
+    height: 1340px;
     margin: 0 auto;
     font-size: 26px;
     font-weight: 400;
     margin-top: 62px;
+    position: relative;
+    text-align: center;
 }
 .bestList > li{
-    float: left;
-    position: relative;
+    display: inline-block;
+    margin: 0 60px;
+    padding: 10px;
 }
-.bestList > li:not(:last-child){margin-right: 120px;}
 .bestList > li > a {display: block;}
-.bestList > li:first-child > a {font-weight: 700; color: #d8c7b8; text-decoration: underline;}
 
 .listSub{
     width: 1200px;
     height: 1250px;
     position: absolute;
-    top: 80px;
-    left: -380px;
+    top: 120px;
+    left: 0;
 }
-.listSub2{left: -546px;}
-.listSub3{left: -763px;}
 .listSub > li {
     width: 280px;
     height: 550px;
@@ -473,14 +475,18 @@ input{
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 110px;
+    text-align: left;
+}
+.listSub > li > a{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .listSub > li:not(:nth-of-type(4)),.listSub > li:not(:nth-of-type(8)){margin-right: 20px;}
 .listSub > li > a{display: block;}
 .WeeklyBestImage{
     display: block;
     position: relative;
-    width: 280px;
-    height: 400px;
     margin-bottom: 16px;
 }
 .WeeklyBestRank{
@@ -498,17 +504,17 @@ input{
     left: 0;
 }
 .BestCheckHeart{
+    width: 33px;
+    height: 27px;
     display: block;
     position: absolute;
     bottom: 7px;
     right: 7px;
+    background: url("../images/mainBestHeart.png");
 }
 .WeeklyBestPrice{
-    width: 280px;
-    height: auto;
-    margin: 16px 0;
     display: block;
-    width: 280px;
+    margin: 16px 0;
     font-size: 28px;
     font-weight: 700;
 }
@@ -520,7 +526,6 @@ input{
 .WeeklyBestIcon > img:last-child{margin-left: 25px;}
 .WeeklyBestColor{
     display: block;
-    width: 280px;
     height: 15px;
     margin-top: 17px;
 }
@@ -609,10 +614,9 @@ input{
     color: #ac1f2d;
 }
 
-/* .listSub1{display: none;} */
+.listSub1{display: none;}
 .listSub2{display: none;}
 .listSub3{display: none;}
-#weeklyBestSection > h3 {margin-top: 1350px;}
 /* -----------------------------------------------기획전영역--------------------------------------------------------------------------------- */
 #eventSection{
     width: 100%;
@@ -811,11 +815,12 @@ input{
     margin-top: 15px;
 }
 /* ------------------------------------------------------------------------------------------------------ */
+.headerOn{
+    background-color: #ac1f2d;
+    transition-duration: 500ms;
+}
 .on{
-    /* display: block; */
-    visibility: visible;
-    opacity: 1;
-    transition: 500ms;
+    display: block;
 }
 .shadowOn{
     opacity: 1;
@@ -823,9 +828,17 @@ input{
     transition-duration: 300ms;
 }
 .topIconOpacity{
-    opacity: 0.5;
+    opacity: 0.3;
     transition-duration: 500ms;
 }
 .checkedHeart{
     background: url("../images/mainbigHeart.png");
+}
+.checkHeartBest{
+    background: url("../images/mainsmallHeart.png");
+}
+.checkedText{
+    font-weight: 700;
+    color: #d8c7b8; 
+    text-decoration: underline;
 }

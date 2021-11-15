@@ -2,6 +2,14 @@ window.addEventListener("load",function () {
     // setTimeout(function () {
     //     scrollTo(0,0)
     // }, 10);
+    const aTag = document.getElementsByTagName("a");
+    
+    for(let A = 0; A < aTag.length; A++){
+        aTag[A].addEventListener("click", function (event){
+            if(aTag[A].getAttribute("href") == "#")
+                event.preventDefault();
+        });
+    }
     //-----------------------------------------------------------------------------------------------------
     // 헤더
     const header = document.querySelector("#header");
@@ -27,7 +35,6 @@ window.addEventListener("load",function () {
         }
     });
     
-
     nav.children[3].addEventListener("mouseenter", function () {
         subWomen.classList.add("on");
         shadowScreen.classList.add("shadowOn");
@@ -36,7 +43,6 @@ window.addEventListener("load",function () {
         subWomen.classList.remove("on");
         shadowScreen.classList.remove("shadowOn");
     });
-
 
     nav.children[4].addEventListener("mouseenter", function () {
         subMen.classList.add("on");
@@ -47,7 +53,6 @@ window.addEventListener("load",function () {
         shadowScreen.classList.remove("shadowOn");
     });    
 
-
     // 네비게이션 서브메뉴 이벤트
     for(let j = 0; j < nav.children.length; j++){
         nav.children[j].addEventListener("click", function(event) {event.preventDefault();});
@@ -55,7 +60,6 @@ window.addEventListener("load",function () {
 
     // topIcon opacity 이벤트
     for(let i = 0; i < topIcon.length; i++){
-        topIcon[i].addEventListener("click", function(event){event.preventDefault()});
         topIcon[i].addEventListener("mouseenter", function () {
             for(let k = 0; k < topIcon.length; k++){
                 if(k == i) continue;
@@ -72,18 +76,16 @@ window.addEventListener("load",function () {
 
     // 헤더 mouseenter/mouseleave 함수
     function headerChange() {
-        header.style.backgroundColor = "#ac1f2d";
-        header.style.transitionDuration = duration+"ms";
+        header.classList.add("headerOn");
         logo.setAttribute("src", "./images/mainLogosub.png");
-
+        
     }
     function headerRemove() {
         if(window.scrollY > 0){
             headerChange();
         }
         else{
-            header.style.backgroundColor = "";
-            header.style.transitionDuration = duration+"ms";
+            header.classList.remove("headerOn");
             logo.setAttribute("src", "./images/mainLogo.png");
         }
     }
@@ -93,10 +95,6 @@ window.addEventListener("load",function () {
     const slideLeft = document.querySelector(".slideLeft");
     const slideRight = document.querySelector(".slideRight");
     const offsetTime = 5000;
-
-    for(let q = 0; q < mainSlide.children.length; q++){
-        mainSlide.children[q].addEventListener("click", function(event) {event.preventDefault();});
-    }
 
     // 슬라이드 좌우버튼 클릭 이벤트
     slideRight.addEventListener("click", function () {
@@ -149,16 +147,6 @@ window.addEventListener("load",function () {
     const whatsNewLeft = document.querySelector(".whatsNewLeft");
     const whatsNewRight = document.querySelector(".whatsNewRight");
     const checkHeart = document.querySelectorAll(".checkHeart");
-    const viewMore = document.querySelectorAll(".viewMore");
-
-    // 슬라이드 기본이벤트 제거
-    for(let w = 0; w < whatsNewSlide.children.length; w++){
-        whatsNewSlide.children[w].addEventListener("click",function (event) {event.preventDefault();});
-    }
-
-    for(let r = 0; r < viewMore.length; r++){
-        viewMore[r].addEventListener("click", function(event) {event.preventDefault();});
-    }
 
     // 찜하기 기능 이벤트
     for(let e = 0; e < checkHeart.length; e++){
@@ -223,5 +211,29 @@ window.addEventListener("load",function () {
     }
 
     //------------------------------------------------------------------------------------------------------
+    // WeeklyBest
+        const bestList = document.querySelectorAll(".bestList > li");
+        const bestListA = document.querySelectorAll(".bestList > li > a");
+        const listSub = document.querySelectorAll(".listSub");
+        const BestCheckHeart = document.querySelectorAll(".BestCheckHeart");
+
+        // 상품목록별 베스트 상품 보기 이벤트
+        for(let a = 0; a < bestList.length; a++){
+            bestList[a].addEventListener("click", function () {
+                for(let aa = 0; aa < listSub.length; aa++){
+                    listSub[aa].classList.remove("on");
+                    bestListA[aa].classList.remove("checkedText");
+                }
+                listSub[a].classList.toggle("on");
+                bestListA[a].classList.toggle("checkedText");
+            });
+        }
+
+        // 찜하기 기능 이벤트
+        for(let s = 0; s < BestCheckHeart.length; s++){
+            BestCheckHeart[s].addEventListener("click", function () {
+                BestCheckHeart[s].classList.toggle("checkHeartBest");
+            });
+        }
     //------------------------------------------------------------------------------------------------------
 });
