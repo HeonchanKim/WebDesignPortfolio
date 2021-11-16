@@ -3,8 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <title>8seconds SubPage</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/Substyle.css">
+    <script src="./js/Subscript.js"></script>
 </head>
 <body>
+    <header id="header">
+        <h1 id="logo"><a href="./index.html"><img src="./images/mainLogosub.png" alt="logo"></a></h1>
+        <!-- 네비게이션 -->
+        <nav id="nav" class="w1200">
+            <ul>
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">BEST</a></li>
+                <li><a href="#">SALE</a></li>
+                <li><a href="#">WOMEN</a>
+                    <ul class="sub subWomen">
+                        <li>
+                            <ul class="subLeftList">
+                                <li><a href="#">NEW</a></li>
+                                <li><a href="#">BEST</a></li>
+                                <li><a href="#">SALE</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="subMidList">
+                                <li><a href="#">ALL</a></li>
+                                <li><a href="#">티셔츠</a></li>
+                                <li><a href="#">셔츠/블라우스</a></li>
+                                <li><a href="#">원피스</a></li>
+                                <li><a href="#">니트</a></li>
+                                <li><a href="#">팬츠</a></li>
+                                <li><a href="#">스커트</a></li>
+                                <li><a href="#">아우터</a></li>
+                                <li><a href="#">재킷/베스트</a></li>
+                                <li><a href="#">패션잡화</a></li>
+                                <li><a href="#">라운지/언더웨어</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="subRightList">
+                                <li><a href="#"><img src="./images/mainnavImage1.jpg" alt="Image"></a></li>
+                                <li><a href="#"><img src="./images/mainnavImage2.jpg" alt="Image"></a></li>
+                                <li><a href="#"><img src="./images/mainnavImage3.jpg" alt="Image"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">MEN</a>
+                    <ul class="sub subMen">
+                        <li>
+                            <ul class="subLeftList">
+                                <li><a href="#">NEW</a></li>
+                                <li><a href="#">BEST</a></li>
+                                <li><a href="#">SALE</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="subMidList">
+                                <li><a href="#">ALL</a></li>
+                                <li><a href="#">티셔츠</a></li>
+                                <li><a href="#">셔츠</a></li>
+                                <li><a href="#">니트</a></li>
+                                <li><a href="#">팬츠</a></li>
+                                <li><a href="#">아우터</a></li>
+                                <li><a href="#">재킷/베스트</a></li>
+                                <li><a href="#">패션잡화</a></li>
+                                <li><a href="#">언더웨어</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="subRightList">
+                                <li><a href="#"><img src="./images/mainnavImage4.jpg" alt="Image"></a></li>
+                                <li><a href="#"><img src="./images/mainnavImage5.jpg" alt="Image"></a></li>
+                                <li><a href="#"><img src="./images/mainnavImage6.jpg" alt="Image"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">OUTLET</a></li>
+            </ul>
+        </nav>
+        <div class="shadowScreen"></div>
+        <ul id="topIcon">
+            <li><a href="#"><img src="./images/mainnavIcon1.png" alt="Icon"></a></li>
+            <li><a href="#"><img src="./images/mainnavIcon2.png" alt="Icon"></a></li>
+            <li><a href="#"><img src="./images/mainnavIcon3.png" alt="Icon"></a></li>
+            <li><a href="#"><img src="./images/mainnavIcon4.png" alt="Icon"></a></li>
+        </ul>
+    </header>
+    <!-- 본문 영역 -->
+    <section id="BestSection" class="w1200">
+        <h2 class="sectionTitle">Best</h2>
+        <form action="list" method="get" id="formList">
+            <select name="list" class="list_tab">
+                <option value="daily">일간</option>
+                <option value="weekly">주간</option>
+                <option value="monthly">월간</option>
+            </select>
+        </form>
+        <ul class="bestList">
+            <li><a href="#">ALL</a></li> 
+            <li><a href="#" class="checkedText">WOMEN</a>
+                <ul class="listSubTop">
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage1.jpg" alt="NewImage"><span class="BestRank">1<span>BEST</span></span><span class="TopRankBestCheckHeart"></span></span>
+                        블랙 아가일 패턴 베스트
+                        <span class="BestPrice">35,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 551 <img src="./images/mainreview.png" alt="reviewIcon"> 4</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage2.jpg" alt="NewImage"><span class="BestRank">2<span>BEST</span></span><span class="TopRankBestCheckHeart"></span></span>
+                        아이보리 스트라이프 칼라 니트
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 221 <img src="./images/mainreview.png" alt="reviewIcon"> 4</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage3.jpg" alt="NewImage"><span class="BestRank">3<span>BEST</span></span><span class="TopRankBestCheckHeart"></span></span>
+                        베이지 컬러 블록 라운드넥 카디건
+                        <span class="BestPrice">49,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 553 <img src="./images/mainreview.png" alt="reviewIcon"> 3</span>
+                    </a></li>
+                </ul>
+                <ul class="listSub listSub1 on">
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage4.jpg" alt="NewImage"><span class="BestRank">4</span><span class="BestCheckHeart"></span></span>
+                        베이지 나일론 코튼 집업 블루종 점퍼
+                        <span class="BestPrice">69,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 295 <img src="./images/mainreview.png" alt="reviewIcon"> 7</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage5.jpg" alt="NewImage"><span class="BestRank">5</span><span class="BestCheckHeart"></span></span>
+                        네이비 꽃 자카드 니트 베스트
+                        <span class="BestPrice">35,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 503 <img src="./images/mainreview.png" alt="reviewIcon"> 23</span>
+                        <span class="BestColor BestColor2_5"><span><span>#ebceb1</span></span><span><span>#0a1f89</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage6.jpg" alt="NewImage"><span class="BestRank">6</span><span class="BestCheckHeart"></span></span>
+                        아이보리 레이스 칼라 카디건
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 447 <img src="./images/mainreview.png" alt="reviewIcon"> 17</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage7.jpg" alt="NewImage"><span class="BestRank">7</span><span class="BestCheckHeart"></span></span>
+                        아이보리 변형조직 브이넥 긴팔 니트
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 160 <img src="./images/mainreview.png" alt="reviewIcon"> 5</span>
+                        <span class="BestColor BestColor2_7"><span><span>#6c462f</span></span><span><span>#fff4c7</span></span><span><span>#7b885c</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage8.jpg" alt="NewImage"><span class="BestRank">8</span><span class="BestCheckHeart"></span></span>
+                        아이보리 코튼 그래픽 스웨트 셔츠
+                        <span class="BestPrice">29,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 186 <img src="./images/mainreview.png" alt="reviewIcon"> 42</span>
+                        <span class="BestColor BestColor2_8"><span><span>#fff4c7</span></span><span><span>#0a1f89</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage9.jpg" alt="NewImage"><span class="BestRank">9</span><span class="BestCheckHeart"></span></span>
+                        화이트 라운드넥 소매 슬릿 긴팔 티셔츠
+                        <span class="BestPrice">29,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 157 <img src="./images/mainreview.png" alt="reviewIcon"> 38</span>
+                        <span class="BestColor BestColor2_9"><span><span>#ebceb1</span></span><span><span>#ffffff</span></span><span><span>#808080</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage10.jpg" alt="NewImage"><span class="BestRank">10</span><span class="BestCheckHeart"></span></span>
+                        브라운 칼라넥 니트 베스트
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 288 <img src="./images/mainreview.png" alt="reviewIcon"> 2</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage11.jpg" alt="NewImage"><span class="BestRank">11</span><span class="BestCheckHeart"></span></span>
+                        애쉬 스트레치 하프 밴딩 원턱 팬츠
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 258 <img src="./images/mainreview.png" alt="reviewIcon"> 2</span>
+                        <span class="BestColor BestColor2_11"><span><span>#111000</span></span><span><span>#808080</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage12.jpg" alt="NewImage"><span class="BestRank">12</span><span class="BestCheckHeart"></span></span>
+                        네이비 코튼 그래픽 스웨트 셔츠
+                        <span class="BestPrice">29,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 485 <img src="./images/mainreview.png" alt="reviewIcon"> 42</span>
+                        <span class="BestColor BestColor2_12"><span><span>#fff4c7</span></span><span><span>#0a1f89</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage13.jpg" alt="NewImage"><span class="BestRank">13</span><span class="BestCheckHeart"></span></span>
+                        베이지 앞단작 조직 배색 카디건
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 53 <img src="./images/mainreview.png" alt="reviewIcon"> 0</span>
+                        <span class="BestColor BestColor2_13"><span><span>#ebceb1</span></span><span><span>#808080</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage14.jpg" alt="NewImage"><span class="BestRank">14</span><span class="BestCheckHeart"></span></span>
+                        베이지 케이블 조직 나무 단추 긴팔 카디건
+                        <span class="BestPrice">49,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 333 <img src="./images/mainreview.png" alt="reviewIcon"> 8</span>
+                        <span class="BestColor BestColor2_14"><span><span>#ebceb1</span></span><span><span>#6c462f</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage15.jpg" alt="NewImage"><span class="BestRank">15</span><span class="BestCheckHeart"></span></span>
+                        블랙 깅엄체크 퍼프 카디건
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 218 <img src="./images/mainreview.png" alt="reviewIcon"> 7</span>
+                        <span class="BestColor BestColor2_15"><span><span>#ff7e46</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage16.jpg" alt="NewImage"><span class="BestRank">16</span><span class="BestCheckHeart"></span></span>
+                        베이지 라운드넥 소매 슬릿 긴팔 니트
+                        <span class="BestPrice">29,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 121 <img src="./images/mainreview.png" alt="reviewIcon"> 38</span>
+                        <span class="BestColor BestColor2_16"><span><span>#ebceb1</span></span><span><span>#ffffff</span></span><span><span>#808080</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage17.jpg" alt="NewImage"><span class="BestRank">17</span><span class="BestCheckHeart"></span></span>
+                        베이지 네프사 라운드넥 긴팔 카디건
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 298 <img src="./images/mainreview.png" alt="reviewIcon"> 7</span>
+                        <span class="BestColor BestColor2_17"><span><span>#ebceb1</span></span><span><span>#6c462f</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage18.jpg" alt="NewImage"><span class="BestRank">18</span><span class="BestCheckHeart"></span></span>
+                        브릭 에코 레더 오버핏 집업 점퍼
+                        <span class="BestPrice">79,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 286 <img src="./images/mainreview.png" alt="reviewIcon"> 2</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage19.jpg" alt="NewImage"><span class="BestRank">19</span><span class="BestCheckHeart"></span></span>
+                        브라운 울 블렌디드 슬랙스_스트레이트핏
+                        <span class="BestPrice">49,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 134 <img src="./images/mainreview.png" alt="reviewIcon"> 3</span>
+                        <span class="BestColor BestColor2_19"><span><span>#ebceb1</span></span><span><span>#6c462f</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage20.jpg" alt="NewImage"><span class="BestRank">20</span><span class="BestCheckHeart"></span></span>
+                        스카이 블루 트위드 포켓 라운드넥 긴팔 카디건
+                        <span class="BestPrice">49,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 153 <img src="./images/mainreview.png" alt="reviewIcon"> 4</span>
+                        <span class="BestColor BestColor2_20"><span><span>#ebceb1</span></span><span><span>#ccecff</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage21.jpg" alt="NewImage"><span class="BestRank">21</span><span class="BestCheckHeart"></span></span>
+                        애쉬 데님 밑단 워싱 디테일 롱 스커트
+                        <span class="BestPrice">49,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 232 <img src="./images/mainreview.png" alt="reviewIcon"> 7</span>
+                        <span class="BestColor BestColor2_21"><span><span>#089acc</span></span><span><span>#808080</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage22.jpg" alt="NewImage"><span class="BestRank">22</span><span class="BestCheckHeart"></span></span>
+                        베이지 나일론 혼방 셔츠형 원피스
+                        <span class="BestPrice">59,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 316 <img src="./images/mainreview.png" alt="reviewIcon"> 6</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage23.jpg" alt="NewImage"><span class="BestRank">23</span><span class="BestCheckHeart"></span></span>
+                        카키 변형조직 브이넥 긴팔 니트
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 106 <img src="./images/mainreview.png" alt="reviewIcon"> 5</span>
+                        <span class="BestColor BestColor2_23"><span><span>#6c462f</span></span><span><span>#ebceb1</span></span><span><span>#7b885c</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage24.jpg" alt="NewImage"><span class="BestRank">24</span><span class="BestCheckHeart"></span></span>
+                        블랙 스트라이프 골지 니트
+                        <span class="BestPrice">29,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 59 <img src="./images/mainreview.png" alt="reviewIcon"> 2</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage25.jpg" alt="NewImage"><span class="BestRank">25</span><span class="BestCheckHeart"></span></span>
+                        그레이 투버튼 싱글 이중지 쇼트 재킷_컴포트핏
+                        <span class="BestPrice">79,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 145 <img src="./images/mainreview.png" alt="reviewIcon"> 1</span>
+                        <span class="BestColor BestColor2_25"><span><span>#ebceb1</span></span><span><span>#6c462f</span></span><span><span>#808080</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage26.jpg" alt="NewImage"><span class="BestRank">26</span><span class="BestCheckHeart"></span></span>
+                        라이트 그린 깅엄 체크 스퀘어 니트
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 108 <img src="./images/mainreview.png" alt="reviewIcon"> 4</span>
+                        <span class="BestColor BestColor2_26"><span><span>#8fc735</span></span><span><span>#ccecff</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage27.jpg" alt="NewImage"><span class="BestRank">27</span><span class="BestCheckHeart"></span></span>
+                        브라운 체크 비조 미디 스커트
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 122 <img src="./images/mainreview.png" alt="reviewIcon"> 3</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage28.jpg" alt="NewImage"><span class="BestRank">28</span><span class="BestCheckHeart"></span></span>
+                        그레이 라운드넥 소매 슬릿 니트
+                        <span class="BestPrice">29,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 119 <img src="./images/mainreview.png" alt="reviewIcon"> 38</span>
+                        <span class="BestColor BestColor2_28"><span><span>#ebceb1</span></span><span><span>#ffffff</span></span><span><span>#808080</span></span><span><span>#111000</span></span></span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage29.jpg" alt="NewImage"><span class="BestRank">29</span><span class="BestCheckHeart"></span></span>
+                        그레이 볼레로 긴팔 카디건
+                        <span class="BestPrice">39,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 344 <img src="./images/mainreview.png" alt="reviewIcon"> 5</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span class="BestImage"><img src="./images/subImage30.jpg" alt="NewImage"><span class="BestRank">30</span><span class="BestCheckHeart"></span></span>
+                        브라운 칼라넥 니트 베스트
+                        <span class="BestPrice">35,900</span>
+                        <span class="BestIcon"><img src="./images/mainheart.png" alt="heartIcon"> 313 <img src="./images/mainreview.png" alt="reviewIcon"> 27</span>
+                        <span class="BestColor BestColor2_30"><span><span>#b685e0</span></span><span><span>#ffffff</span></span></span>
+                    </a></li>
+                </ul>
+            </li>
+            <li><a href="#">MEN</a></li> 
+        </ul>
+    </section>
     
+    <!-- 푸터영역 -->
+    <footer id="footer">
+        <section class="footerContainer w1200">
+            <article class="leftContent">
+                <h3>삼성물산(주)패션부문</h3>
+                <p>
+                    <span>서울특별시 강남구 남부 순환로 2806(도곡동) | 대표 고정석 외2명 | 고객센터 1599-0007 | 팩스번호 FAX : 02-2266-1202</span>
+                    <span>사업자 등록번호 101-85-43600 | 통신판매업 신고번호 제 2015-서울강남-02894 | 사업자 정보확인</span>
+                    <span>KG모빌리언스 구매안전(에스크로)서비스 서비스 가입사실 확인</span>
+                    <span>고객님의 안전거래를 위해 현금 등으로 5만원 이상 결제 시 저희 쇼핑몰에서 가입한 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</span>
+                    <span>호스팅서비스 : 삼성물산(주)패션부문</span>
+                </p>
+                <p>COPYRIGHTⓒ2021 SSF SHOPALLRIGHTS RESERVED</p>
+                <p>
+                    <img src="./images/mainfooterImage.png" alt="footerImage"><span>| 인증범위 : 인터넷쇼핑몰서비스운영 | 유효기간 : 2019.08.12 ~ 2022.08.11</span>
+                </p>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                </ul>
+            </article>
+            <article class="rightContent">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">매장찾기</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">단체주문</a></li>
+                    <li><a href="#">멤버십안내</a></li>
+                    <li><a href="#">제휴문의</a></li>
+                    <li><a href="#">구매혜택</a></li>
+                    <li><a href="#">입점신청</a></li>
+                </ul>
+                <h4>1599-0007</h4>
+                <h5>평일 AM 09:00 - PM 18:00</h5>
+            </article> 
+        </section>
+    </footer>
 </body>
 </html>
