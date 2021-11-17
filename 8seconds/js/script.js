@@ -22,19 +22,24 @@ window.addEventListener("load",function () {
     const duration = 500;
 
     // 네비 hover 이벤트
-    header.addEventListener("mouseenter", headerChange);
-    header.addEventListener("mouseleave", headerRemove);
+    header.addEventListener("mouseenter", function () {
+        headerChange();
+        this.classList.add("opacityHeader");
+    });
+    header.addEventListener("mouseleave", function () {
+        headerRemove();
+        this.classList.remove("opacityHeader");
+    });
     
     window.addEventListener("scroll", function(event) {
         event.preventDefault();
-        if(window.pageYOffset > 0 || subWomen.classList.contains("on") || subMen.classList.contains("on")){
+        if(window.pageYOffset > 0 || subWomen.classList.contains("on") || subMen.classList.contains("on")|| header.classList.contains("opacityHeader")){
             headerChange();
         }
         else{
             headerRemove();
         }
     });
-    
     nav.children[3].addEventListener("mouseenter", function () {
         subWomen.classList.add("on");
         shadowScreen.classList.add("shadowOn");
@@ -52,11 +57,6 @@ window.addEventListener("load",function () {
         subMen.classList.remove("on");
         shadowScreen.classList.remove("shadowOn");
     });    
-
-    // 네비게이션 서브메뉴 이벤트
-    for(let j = 0; j < nav.children.length; j++){
-        nav.children[j].addEventListener("click", function(event) {event.preventDefault();});
-    }
 
     // topIcon opacity 이벤트
     for(let i = 0; i < topIcon.length; i++){
@@ -212,28 +212,28 @@ window.addEventListener("load",function () {
 
     //------------------------------------------------------------------------------------------------------
     // WeeklyBest
-        const bestList = document.querySelectorAll(".bestList > li");
-        const bestListA = document.querySelectorAll(".bestList > li > a");
-        const listSub = document.querySelectorAll(".listSub");
-        const BestCheckHeart = document.querySelectorAll(".BestCheckHeart");
+    const bestList = document.querySelectorAll(".bestList > li");
+    const bestListA = document.querySelectorAll(".bestList > li > a");
+    const listSub = document.querySelectorAll(".listSub");
+    const BestCheckHeart = document.querySelectorAll(".BestCheckHeart");
 
-        // 상품목록별 베스트 상품 보기 이벤트
-        for(let a = 0; a < bestList.length; a++){
-            bestList[a].addEventListener("click", function () {
-                for(let aa = 0; aa < listSub.length; aa++){
-                    listSub[aa].classList.remove("on");
-                    bestListA[aa].classList.remove("checkedText");
-                }
-                listSub[a].classList.toggle("on");
-                bestListA[a].classList.toggle("checkedText");
-            });
-        }
+    // 상품목록별 베스트 상품 보기 이벤트
+    for(let a = 0; a < bestList.length; a++){
+        bestList[a].addEventListener("click", function () {
+            for(let aa = 0; aa < listSub.length; aa++){
+                listSub[aa].classList.remove("on");
+                bestListA[aa].classList.remove("checkedText");
+            }
+            listSub[a].classList.toggle("on");
+            bestListA[a].classList.toggle("checkedText");
+        });
+    }
 
-        // 찜하기 기능 이벤트
-        for(let s = 0; s < BestCheckHeart.length; s++){
-            BestCheckHeart[s].addEventListener("click", function () {
-                BestCheckHeart[s].classList.toggle("checkHeartBest");
-            });
-        }
+    // 찜하기 기능 이벤트
+    for(let s = 0; s < BestCheckHeart.length; s++){
+        BestCheckHeart[s].addEventListener("click", function () {
+            BestCheckHeart[s].classList.toggle("checkHeartBest");
+        });
+    }
     //------------------------------------------------------------------------------------------------------
 });

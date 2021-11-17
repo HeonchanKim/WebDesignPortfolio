@@ -256,7 +256,7 @@ window.addEventListener("load", function () {
 
     //-------------------------------------------------------------------------------------------------------------
     // 스크롤링
-
+/*
     let html = document.querySelector("html");
 
     window.addEventListener("wheel", function(event) {
@@ -355,98 +355,97 @@ window.addEventListener("load", function () {
         }, 100)
         // if(timerID) return false;
     }
+*/
 
 
 
 
-
-    // let html = document.querySelector("html");
-    // let timerID;
-    // window.addEventListener("wheel", function(event) {
-    //     event.preventDefault();
-    //     // if(window.scrollY > 0) return;
-    //     let delta = event.deltaY;
+    let html = document.querySelector("html");
+    let timerID;
+    window.addEventListener("wheel", function(event) {
+        event.preventDefault();
+        // if(window.scrollY > 0) return;
+        let delta = event.deltaY;
         
-    //     if (delta > 0){
-    //         nextPage();
-    //     }else{
-    //         prevPage();
-    //     }
-    // },{passive:false});
+        if (delta > 0){
+            nextPage();
+        }else{
+            prevPage();
+        }
+    },{passive:false});
     
-    // // 다음 페이지
-    // function nextPage () {
-    //     // 현재 페이지의 높이
-    //     let pageHeight = window.innerHeight;
-    //     // 현재 스크롤된 높이
-    //     let crtScrollTop = window.scrollY;
-    //     // 문서 전체 높이
-    //     let documentHeight = document.body.scrollHeight;
-    //     // const documentHeight = document.body.clientHeight;
-    //     // 스크롤 이동 거리
-    //     let dist = 0;
+    // 다음 페이지
+    function nextPage () {
+        // 현재 페이지의 높이
+        let pageHeight = window.innerHeight;
+        // 현재 스크롤된 높이
+        let crtScrollTop = window.scrollY;
+        // 문서 전체 높이
+        let documentHeight = document.body.scrollHeight;
+        // const documentHeight = document.body.clientHeight;
+        // 스크롤 이동 거리
+        let dist = 0;
 
-    //     // 다음페이지가 없는경우 이동거리가 없어 바로종료
-    //     if(documentHeight <= crtScrollTop + pageHeight) return;
+        // 다음페이지가 없는경우 이동거리가 없어 바로종료
+        if(documentHeight <= crtScrollTop + pageHeight) return;
 
-    //     // 페이지를 먼저 이동한 다음
-    //     // 한 페이지가 한 화면에 보여지도록 조정
+        // 페이지를 먼저 이동한 다음
+        // 한 페이지가 한 화면에 보여지도록 조정
 
-    //     //    현재 스크롤된 높이 + 현재 페이지 높이
-    //     dist = crtScrollTop + pageHeight;
+        //    현재 스크롤된 높이 + 현재 페이지 높이
+        dist = crtScrollTop + pageHeight;
         
-    //     // 페이지에서 벗어난 부분을 구한다
-    //     // (현재 스크롤된 높이 + 현재 페이지 높이) % 현재 페이지의 높이            
-    //     let overScroll = dist % pageHeight;
+        // 페이지에서 벗어난 부분을 구한다
+        // (현재 스크롤된 높이 + 현재 페이지 높이) % 현재 페이지의 높이            
+        let overScroll = dist % pageHeight;
         
-    //     // 만약 벗어난 부분이 없으면 값이 0이기 때문에 (페이지높이와 스크롤된 높이가 같기때문에(dist = overScroll))
-    //     // 뺄셈의 결과가 변하지 않는다.
-    //     dist -= overScroll;
+        // 만약 벗어난 부분이 없으면 값이 0이기 때문에 (페이지높이와 스크롤된 높이가 같기때문에(dist = overScroll))
+        // 뺄셈의 결과가 변하지 않는다.
+        dist -= overScroll;
 
-    //     let timerID = window.setInterval(function () {
-    //         window.scrollTo({top:dist, behavior:'smooth'});
-    //         // window.scrollTo(0, dist);
-    //         console.log(dist);
-    //         clearInterval(timerID);
-    //     }, 100)
-    //     // if(timerID) return false;
+        let timerID = window.setInterval(function () {
+            html.scrollTo({top:dist, behavior:'smooth'});
+            // window.scrollTo(0, dist);
+            console.log(dist);
+            clearInterval(timerID);
+        }, 100)
         
-    //     } // end of nextPage
+        } // end of nextPage
 
-    // // 이전 페이지
-    // function prevPage() {
-    //     // 이전 페이지로 이동한 다음
-    //     // 페이지 조정을 수행한다.
+    // 이전 페이지
+    function prevPage() {
+        // 이전 페이지로 이동한 다음
+        // 페이지 조정을 수행한다.
 
-    //     // 현재 페이지의 높이
-    //     let pageHeight = window.innerHeight;
-    //     // 현재 스크롤된 높이
-    //     let crtScrollTop = window.scrollY;
-    //     // 문서 전체 높이
-    //     let documentHeight = document.body.scrollHeight;
-    //     // const documentHeight = document.body.clientHeight;
-    //     // 스크롤 이동 거리
-    //     let dist = 0;
+        // 현재 페이지의 높이
+        let pageHeight = window.innerHeight;
+        // 현재 스크롤된 높이
+        let crtScrollTop = window.scrollY;
+        // 문서 전체 높이
+        let documentHeight = document.body.scrollHeight;
+        // const documentHeight = document.body.clientHeight;
+        // 스크롤 이동 거리
+        let dist = 0;
 
-    //     // 이전 페이지가 없는 경우에는 종료
-    //     if(crtScrollTop == 0) return;
+        // 이전 페이지가 없는 경우에는 종료
+        if(crtScrollTop == 0) return;
 
-    //     dist = crtScrollTop - pageHeight;
+        dist = crtScrollTop - pageHeight;
 
-    //     // 한 페이지가 화면에 다 보이도록 조정
-    //     let overScroll = dist % pageHeight;
-    //     if(overScroll != 0) overScroll = pageHeight - overScroll;
+        // 한 페이지가 화면에 다 보이도록 조정
+        let overScroll = dist % pageHeight;
+        if(overScroll != 0) overScroll = pageHeight - overScroll;
 
-    //     dist += overScroll;
+        dist += overScroll;
 
-    //     // html.scrollTo({top:dist, behavior:'smooth'})
-    //     // console.log(dist);
-    //     let timerID = window.setInterval(function () {
-    //         window.scrollTo({top:dist, behavior:'smooth'});
-    //         console.log(dist);
-    //         clearInterval(timerID);
-    //     }, 100)
-    //     // if(timerID) return false;
-    // }
+        // html.scrollTo({top:dist, behavior:'smooth'})
+        // console.log(dist);
+        let timerID = window.setInterval(function () {
+            window.scrollTo({top:dist, behavior:'smooth'});
+            console.log(dist);
+            clearInterval(timerID);
+        }, 100)
+        // if(timerID) return false;
+    }
     
 });

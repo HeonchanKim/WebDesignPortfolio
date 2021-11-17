@@ -1,4 +1,15 @@
 window.addEventListener("load", function () {
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+    const aTag = document.getElementsByTagName("a");
+    
+    for(let A = 0; A < aTag.length; A++){
+        aTag[A].addEventListener("click", function (event){
+            if(aTag[A].getAttribute("href") == "#")
+                event.preventDefault();
+        });
+    }
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+
     let timerId1;
     let timerId3;
 
