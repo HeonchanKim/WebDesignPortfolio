@@ -34,7 +34,7 @@ input{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 2;
     transition-duration: 500ms;
 }
 /* 로고 */
@@ -485,6 +485,7 @@ input{
     font-weight: 400;
     margin-bottom: 110px;
     text-align: left;
+    position: relative;
 }
 .listSub > li > a{
     white-space: nowrap;
@@ -497,6 +498,17 @@ input{
     display: block;
     position: relative;
     margin-bottom: 16px;
+}
+.hoverImage{
+    display: block;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.listSub > li:hover > a > span.hoverImage{
+    opacity: 1;
+    transition-duration: 300ms;
 }
 .WeeklyBestRank{
     display: block;
@@ -511,6 +523,7 @@ input{
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 .BestCheckHeart{
     width: 33px;
@@ -520,6 +533,7 @@ input{
     bottom: 7px;
     right: 7px;
     background: url("../images/mainBestHeart.png");
+    z-index: 1;
 }
 .WeeklyBestPrice{
     display: block;
@@ -660,37 +674,54 @@ input{
 .eventImageList > li > a{
     display: block;
 }
-.eventImageList > li > a > span{
+.eventMainText{
     display: block;
     margin-top: 19px;
 }
-.eventImageList > li:nth-of-type(1) > a::before{
-    content: "";
+.eventMainImage{
     display: block;
-    width: 550px;
+    position: relative;
     height: 397px;
-    background: url("../images/mainspecialexhibition1.jpg") no-repeat;
 }
-.eventImageList > li:nth-of-type(2) > a::before{
-    content: "";
+.backgroundBlack, .backgroundWhite{
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     width: 550px;
     height: 397px;
-    background: url("../images/mainspecialexhibition2.jpg") no-repeat;
 }
-.eventImageList > li:nth-of-type(3) > a::before{
-    content: "";
-    display: block;
-    width: 550px;
-    height: 397px;
-    background: url("../images/mainspecialexhibition3.jpg") no-repeat;
+.backgroundBlack{
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.eventImageList > li:nth-of-type(4) > a::before{
-    content: "";
-    display: block;
+.backgroundWhite{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.eventMainImageText{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.eventMainImageText{
+    font-size: 70px;
+    font-weight: 900;
     width: 550px;
-    height: 397px;
-    background: url("../images/mainspecialexhibition4.jpg") no-repeat;
+}
+.eventImageList > li:nth-of-type(1) > a > .eventMainImage > .eventMainImageText, .eventImageList > li:nth-of-type(4) > a > .eventMainImage > .eventMainImageText{
+    color: white;
+    margin-top: 128.5px;
+}
+.eventImageList > li:nth-of-type(1) > a > .eventMainImage > .eventMainImageText > span{
+    display: block;
+}
+.eventImageList > li:nth-of-type(2) > a > .eventMainImage > .eventMainImageText{
+    color: #333333;
+    margin-top: 163.5px;
+}
+.eventImageList > li:nth-of-type(3) > a > .eventMainImage > .eventMainImageText{
+    color: #333333;
+    line-height: 1.2;
+    margin-top: 114.5px;
 }
 /* -----------------------------------------------포토리뷰영역--------------------------------------------------------------------------------- */
 #photoReviewSection{
