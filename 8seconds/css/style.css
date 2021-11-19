@@ -18,18 +18,11 @@ button{
     padding: 0;
     margin: 0;
 }
-input{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-}
 /* -----------------------------------------------헤더영역--------------------------------------------------------------------------------- */
 .w1200{width: 1200px; height: auto;}
 #header{
     width: 100%;
-    min-width: 1750px;
+    min-width: 1560px;
     position: fixed;
     top: 0;
     left: 0;
@@ -39,13 +32,14 @@ input{
 }
 /* 로고 */
 #logo{
-    width: 250px;
+    width: 200px;
     height: 100px;
-    float: left;
-    margin-left: 170px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
 }
 #logo > a{
-    margin-top: 10px;
     display: block;
 }
 #logo > a > img{
@@ -54,22 +48,24 @@ input{
 }
 /* 네비 */
 #nav{
-    width: 820px;
+    width: 100%;
     height: 100px;
-    float: left;
     font-size: 20px;
     font-weight: 400;
     color: white;
     text-align: center;
-    margin: 0 auto;
-    margin-left: 150px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #nav > ul{
     width: 820px;
     height: 100px;
     margin: 0 auto;
     box-sizing: border-box;
-    position: relative;
+    /* position: relative; */
 }
 #nav > ul > li{
     float: left;
@@ -91,20 +87,20 @@ input{
 }
 #nav > ul > li:nth-of-type(1):hover > a::before,
 #nav > ul > li:nth-of-type(5):hover > a::before {
-    width: 5%;
+    width: 2.5%;
     opacity: 1;
 }
 #nav > ul > li:nth-of-type(2):hover > a::before,
 #nav > ul > li:nth-of-type(3):hover > a::before {
-    width: 5.5%;
+    width: 3%;
     opacity: 1;
 }
 #nav > ul > li:nth-of-type(4):hover > a::before {
-    width: 9%;
+    width: 4.5%;
     opacity: 1;
 }
 #nav > ul > li:nth-of-type(6):hover > a::before {
-    width: 9.5%;
+    width: 5%;
     opacity: 1;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------- */
@@ -112,16 +108,17 @@ input{
     display: none;
     position: absolute;
     top: 100px;
-    width: 1920px;
+    width: 100%;
     height: 500px;
     background-color: #ededed;
     color: #333333;
     box-sizing: border-box;
     padding-left: 360px;
-    /* opacity: 0; */
     transition: 500ms;
     overflow: hidden;
-    left: -570px;
+    left: 0;
+    right: 0;
+    /* left: -570px; */
 }
 .sub > li{
     height: 500px;
@@ -186,13 +183,13 @@ input{
 #topIcon{
     width: 180px;
     height: 100px;
-    float: left;
-    margin-left: 170px
+    position: absolute;
+    top: 0;
+    right: 30px;
 }
 #topIcon > li{
     padding-top: 37px;
     float: left;
-    /* opacity: 1; */
     transition-duration: 500ms;
 }
 #topIcon > li:not(:last-child){

@@ -407,7 +407,6 @@ window.addEventListener("load", function () {
             html.scrollTo({top:dist, behavior:'smooth'});
             // window.scrollTo(0, dist);
             console.log(dist);
-            clearInterval(timerID);
         }, 100)
         
         } // end of nextPage
@@ -443,9 +442,7 @@ window.addEventListener("load", function () {
         let timerID = window.setInterval(function () {
             window.scrollTo({top:dist, behavior:'smooth'});
             console.log(dist);
-            clearInterval(timerID);
         }, 100)
-        // if(timerID) return false;
     }
     
 });
