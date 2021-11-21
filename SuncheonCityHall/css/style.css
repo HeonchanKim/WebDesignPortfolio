@@ -424,12 +424,7 @@ input{
     background: url("../images/mainSlideStopButton.png");
     /* background-image: url(../images/mainSlideStopButton.png); */
 }
-.stopOn{
-    width: 13px;
-    height: 17px;
-    background: url("../images/mainSlideStartButton.png");
 
-}
 .slideLeftButton, .slideRightButton{
     width: 11px;
     height: 17px;
@@ -1233,11 +1228,6 @@ input{
     display: block;
     transition: 500ms;
 }
-/* .languageSubRotate{
-    rotate: (180deg);
-    transition: 500ms;
-} */
-
 .slideUpOn{
     transition-property: padding-top, padding-bottom, margin-top, margin-bottom, height;
     transition-duration: 500ms;
@@ -1249,4 +1239,8 @@ input{
     margin-top: 0;
     margin-bottom: 0;
 }
-
+.stopOn{
+    width: 13px;
+    height: 17px;
+    background: url("../images/mainSlideStartButton.png");
+}

@@ -7,6 +7,9 @@ a{
     text-decoration: none;
     color: inherit;
 }
+body{ -ms-overflow-style: none; scrollbar-width: none;}
+::-webkit-scrollbar { display: none; }
+/* -------------------------------------------------------------------------------------------------------------------------- */
 #page1 {
     width: 100%;
     height: 100%;

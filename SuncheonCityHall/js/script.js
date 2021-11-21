@@ -207,6 +207,7 @@ window.addEventListener("load", function () {
     // ------------------------------------------------------------------------------------------------
     // mainSlide
     const mainSlide = document.querySelector(".mainSlide > ul");
+    const Bullet = document.querySelector(".slideBullet > ul");
     const slideBullet = document.querySelectorAll(".slideBullet > ul > li > a");
     const slideLeftButton = document.querySelector(".slideLeftButton");
     const slideRightButton = document.querySelector(".slideRightButton");
@@ -248,20 +249,23 @@ window.addEventListener("load", function () {
         slideStart.classList.remove("stopOn");
         timerId4 = window.setInterval(doSlideRight, offsetTime);
     });
-
+    
     let timerId4 = window.setInterval(doSlideRight, offsetTime);
-
-
+    
+    
     
     for(let m = 0; m < slideBullet.length; m++){
+        index = slideBullet[m].classList.contains("on");
         slideBullet[m].addEventListener("click", function (event) {
             event.preventDefault();
+            window.clearInterval(timerId4);
+            
             let clickedIndex = m;
-
+            
             // 현재 a요소와 클릭된 a요소의 차이
             let step = clickedIndex - index;
+            if(step == 0) return false;
 
-            if(step == 0) return;
             index = clickedIndex;
             
             for(let q = 0; q < slideBullet.length; q++){
@@ -275,24 +279,18 @@ window.addEventListener("load", function () {
                 window.setTimeout(function() {
                     mainSlide.removeAttribute("style");
                     for(let g = 0; g < m; g++){
-                        mainSlide.appendChild(mainSlide.children.item(g));
+                        mainSlide.appendChild(mainSlide.children[g]);
                     }
                 },duration);
-                // window.setTimeout(function () {
-                //     for(let w = 0; w < mainSlide.children.length; w++){
-                //         mainSlide.removeAttribute("style");
-                //         mainSlide.append(mainSlide.children.item(m < step));
-                //     }
-                // }, duration);
             }else{
                 let e = (mainSlideCount - 1) + step;
-                for(let r = 0; r < e; r++){
-                    mainSlide.insertBefore(mainSlide.children.item(r),mainSlide.firstElementChild)
+                for(let r = 0; r > e; r++){
+                    mainSlide.insertBefore(mainSlide.children[r],mainSlide.firstElementChild)
                 }
                 mainSlide.style.left = step * 100 + "%";
                 mainSlide.style.transitionDuration = duration + "ms";
                 window.setTimeout(function () {
-                    mainSlide.style.left = 0;
+                    mainSlide.removeAttribute("style");
                 }, duration); // settimeout
             }
         });
