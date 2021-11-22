@@ -96,12 +96,14 @@ input{
     width: 1200px;
     height: 55px;
     margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 #nav > ul > li{
     float: left;
     padding: 0 65px;
     line-height: 55px;
-    position: relative;
 }
 
 
@@ -123,6 +125,7 @@ input{
     display: block;
     width: 200px;
     position: absolute;
+    left: 0;
     top: 55px;
     background-color: white;
     color: #1471ac;
@@ -135,12 +138,12 @@ input{
     box-sizing: border-box;
     z-index: 10;
 }
-#nav > ul > li:nth-child(1) > .subTitle{height: 454px; left: 0;}
-#nav > ul > li:nth-child(2) > .subTitle{height: 272px; left: -196px;}
-#nav > ul > li:nth-child(3) > .subTitle{height: 362px; left: -392.5px;}
-#nav > ul > li:nth-child(4) > .subTitle{height: 406px; left: -588.5px;}
-#nav > ul > li:nth-child(5) > .subTitle{height: 452px; left: -785px;}
-#nav > ul > li:nth-child(6) > .subTitle{height: 638px; left: -981px;}
+#nav > ul > li:nth-child(1) > .subTitle{height: 454px;}
+#nav > ul > li:nth-child(2) > .subTitle{height: 272px;}
+#nav > ul > li:nth-child(3) > .subTitle{height: 362px;}
+#nav > ul > li:nth-child(4) > .subTitle{height: 406px;}
+#nav > ul > li:nth-child(5) > .subTitle{height: 452px;}
+#nav > ul > li:nth-child(6) > .subTitle{height: 638px;}
 .subTitle::after{
     content: "";
     display: block;
@@ -154,6 +157,7 @@ input{
     /* height: 453px; */
     position: absolute;
     top: 55px;
+    left: 200px;
     background-color: #1471ac;
     color: white;
     font-size: 15px;
@@ -164,12 +168,12 @@ input{
     z-index: 15;
 }
 
-#nav > ul > li:nth-child(1) > .sub{height: 454px; left: 200px;} 
-#nav > ul > li:nth-child(2) > .sub{height: 272px; left: 4px;}
-#nav > ul > li:nth-child(3) > .sub{height: 362px; left: -192.5px;}
-#nav > ul > li:nth-child(4) > .sub{height: 406px; left: -388.5px;}
-#nav > ul > li:nth-child(5) > .sub{height: 452px; left: -585px;}
-#nav > ul > li:nth-child(6) > .sub{height: 638px; left: -781px;}
+#nav > ul > li:nth-child(1) > .sub{height: 454px;}
+#nav > ul > li:nth-child(2) > .sub{height: 272px;}
+#nav > ul > li:nth-child(3) > .sub{height: 362px;}
+#nav > ul > li:nth-child(4) > .sub{height: 406px;}
+#nav > ul > li:nth-child(5) > .sub{height: 452px;}
+#nav > ul > li:nth-child(6) > .sub{height: 638px;}
 
 #nav > ul > li > .sub > li{
     position: relative;
@@ -374,15 +378,15 @@ input{
 .mainSlide{
     width: 790px; 
     height: 400px; 
-    /* overflow: hidden;  */
+    overflow: hidden;
     float: left; 
-    z-index: -10;
 }
 .mainSlide > ul{
     width: 300%; height: 100%;
     position: relative;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 .mainSlide > ul > li{
     width: 790px; height: 400px;
@@ -397,6 +401,7 @@ input{
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 16.5px;
+    z-index: 2;
 }
 .slideBullet span{display: none;}
 .slideBullet > ul{

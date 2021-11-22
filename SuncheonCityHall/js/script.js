@@ -219,13 +219,13 @@ window.addEventListener("load", function () {
 
     // 슬라이드 클릭 이벤트
     slideRightButton.addEventListener("click", function () {
-        if(mainSlide.style.left === "-100%") return;
+        if(mainSlide.style.left == "-100%") return false;
         window.clearInterval(timerId4);
         doSlideRight();
         timerId4 = window.setInterval(doSlideRight, offsetTime);
     });
     slideLeftButton.addEventListener("click", function () {
-        if(mainSlide.style.transitionDuration === duration + "ms") return;
+        if(mainSlide.style.transitionDuration == duration + "ms") return false;
         window.clearInterval(timerId4);
         doSlideLeft();
         timerId4 = window.setInterval(doSlideRight, offsetTime);
@@ -239,7 +239,7 @@ window.addEventListener("load", function () {
             timerId4 = window.setInterval(doSlideRight, offsetTime);
         }
     });
-
+    
     // 슬라이드 후버 이벤트
     mainSlide.addEventListener("mouseenter",function () {
         slideStart.classList.add("stopOn");
@@ -249,16 +249,22 @@ window.addEventListener("load", function () {
         slideStart.classList.remove("stopOn");
         timerId4 = window.setInterval(doSlideRight, offsetTime);
     });
+
+    Bullet.addEventListener("mouseenter",function () {
+        slideStart.classList.add("stopOn");
+        window.clearInterval(timerId4);
+    });
+    Bullet.addEventListener("mouseleave",function () {
+        slideStart.classList.remove("stopOn");
+        timerId4 = window.setInterval(doSlideRight, offsetTime);
+    });
     
     let timerId4 = window.setInterval(doSlideRight, offsetTime);
-    
-    
-    
+
+    // 불릿 클릭 이벤트
     for(let m = 0; m < slideBullet.length; m++){
-        index = slideBullet[m].classList.contains("on");
         slideBullet[m].addEventListener("click", function (event) {
             event.preventDefault();
-            window.clearInterval(timerId4);
             
             let clickedIndex = m;
             
@@ -266,29 +272,33 @@ window.addEventListener("load", function () {
             let step = clickedIndex - index;
             if(step == 0) return false;
 
-            index = clickedIndex;
-            
             for(let q = 0; q < slideBullet.length; q++){
                 slideBullet[q].classList.remove("on");
             }
+            index = clickedIndex;
             slideBullet[index].classList.add("on");
             
             if(step > 0) {
                 mainSlide.style.left = step * (-100) + "%";
                 mainSlide.style.transitionDuration = duration + "ms";
                 window.setTimeout(function() {
-                    mainSlide.removeAttribute("style");
-                    for(let g = 0; g < m; g++){
-                        mainSlide.appendChild(mainSlide.children[g]);
+                    if(mainSlide.style.left == "-100%"){
+                        mainSlide.appendChild(mainSlide.firstElementChild);
                     }
-                },duration);
+                    else{
+                        mainSlide.append(mainSlide.children[0], mainSlide.children[1]);
+                    }
+                    mainSlide.removeAttribute("style");
+                }, duration);
             }else{
-                let e = (mainSlideCount - 1) + step;
-                for(let r = 0; r > e; r++){
-                    mainSlide.insertBefore(mainSlide.children[r],mainSlide.firstElementChild)
-                }
+                if(step == -1){ mainSlide.prepend(mainSlide.lastElementChild);}
+                else{mainSlide.prepend(mainSlide.children[1], mainSlide.children[2]);}
                 mainSlide.style.left = step * 100 + "%";
-                mainSlide.style.transitionDuration = duration + "ms";
+                
+                window.setTimeout(function () {
+                    mainSlide.style.left = "0";
+                    mainSlide.style.transitionDuration = duration + "ms";
+                }, 10);
                 window.setTimeout(function () {
                     mainSlide.removeAttribute("style");
                 }, duration); // settimeout
@@ -298,7 +308,6 @@ window.addEventListener("load", function () {
 
     // 오른쪽 슬라이드함수
     function doSlideRight() {
-        
         index++;
         index %= mainSlideCount;
         
@@ -317,7 +326,6 @@ window.addEventListener("load", function () {
     }
 
     function doSlideLeft() {
-        
         index--;
         if(index < 0) index = 2;
         // index %= -mainSlideCount;
@@ -336,14 +344,6 @@ window.addEventListener("load", function () {
         }
 
         slideBullet[index].classList.add("on");
-    }
-
-    function bullet() {
-        slideBullet[index].style.backgroundColor = "#1471ac";
-        window.setTimeout(function () {
-            slideBullet[index].removeAttribute("style");
-            index++;
-        }, duration);
     }
     // ---------------------------------------------------------------------------------------------
     //QuickMenu
@@ -459,7 +459,6 @@ window.addEventListener("load", function () {
             newsListImg[p].style.opacity = "1";
             newsListImg[p].style.transitionDuration = duration + "ms";
         });
-
     }
 
     timerId2 = window.setInterval(doSlideNewsRight, offsetTime);
@@ -529,10 +528,5 @@ window.addEventListener("load", function () {
         this.classList.remove("reverseToggleSub1");
         ftButton3.classList.toggle("ftButtonToggle");
     });
-
-
     // ---------------------------------------------------------------------------------------------
-
-
-
 }); 
