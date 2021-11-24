@@ -95,7 +95,6 @@ window.addEventListener("load",function () {
     const slideLeft = document.querySelector(".slideLeft");
     const slideRight = document.querySelector(".slideRight");
     const offsetTime = 5000;
-    let timerId;
 
     // 슬라이드 좌우버튼 클릭 이벤트
     slideRight.addEventListener("click", function () {
@@ -119,7 +118,7 @@ window.addEventListener("load",function () {
         timerId = window.setInterval(mainSlideRight, offsetTime);
     });
 
-    timerId = window.setInterval(mainSlideRight, offsetTime);
+    let timerId = window.setInterval(mainSlideRight, offsetTime);
 
     // 오른쪽이동 슬라이드 함수
     function mainSlideRight() {

@@ -32,8 +32,9 @@ body{ -ms-overflow-style: none; scrollbar-width: none;}
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -600px;
-    margin-top: -400px;
+    transform: translate(-50%, -50%);
+    /* margin-left: -600px;
+    margin-top: -400px; */
 }
 #page1 > div > h1{
     width: 468px;
@@ -67,7 +68,7 @@ body{ -ms-overflow-style: none; scrollbar-width: none;}
     white-space: nowrap;
 }
 .page1_name > h3 {font-size: 50px;}
-
+/* ------------------------------------------------------------------------------------------------------------- */
 #page2 {
     width: 100%;
     height: 100%;
@@ -596,3 +597,112 @@ body{ -ms-overflow-style: none; scrollbar-width: none;}
     font-family: 'Pretendard-Thin', sans-serif;
     font-size: 20px;
 }
+/* ------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:1919px) {
+    .bt_click{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:1479px) {
+    .page3Container, .page4Container{
+        transform: scale(0.8);
+    }
+    .left, .right{
+        transform: scale(0.8);
+    }
+}
+@media screen and (max-width:1199px) {
+    .page1_w1200{
+        width: 1024px;
+    }
+    .page1_w1200 > h1, .page1_name{
+        transform:scale(0.9);
+    }
+    #page1 > div > h1{margin-left: 30px; margin-top: 150px;}
+    .page1_name{right: 29px;}
+    #page1 > .w1200::after{
+        width: 1024px;
+        height: 800px;
+    }
+    /* ------------------------- */
+    .page2_left{
+        transform: scale(0.9);
+        padding-left: 40px;
+    }
+    .page2_right{
+        transform: scale(0.9);
+        padding-left: 0;
+        position: relative;
+        left: -50px;
+    }
+    /* ------------------------- */
+    .slide_right1, .slide_right2{
+        transform: scale(0.75);
+        left: -110px;
+    }
+    #page2 > div > h2,#page3 > div > h2, #page4 > div > h2, #page5 > div > h2{
+        font-size: 26px;
+    }
+    .page5Container{
+        transform: scale(0.84);
+        left: -95px;
+    }
+    .bt_click{
+        position: relative;
+        top: -60px;
+        left: -185px;
+    }
+    #page6{
+        padding: 170px 0 ;
+    }
+    .page6_text{
+        transform: scale(0.85);
+    }
+}
+@media screen and (max-width:1023px) {
+    .page1_w1200{
+        width: 768px;
+    }
+    .page1_w1200 > h1, .page1_name{
+        transform:scale(0.7);
+    }
+    #page1 > div > h1{margin-left: 0px; margin-top: 133px;}
+    .page1_name{right: 0px;}
+    #page1 > .w1200::after{
+        width: 768px;
+        height: 800px;
+    }
+    /* ------------------------- */
+    .page2_left{
+        transform: scale(0.7);
+        padding-left: 0px;
+        position: relative;
+        left: -25px;
+    }
+    .page2_right{
+        transform: scale(0.7);
+        padding-left: 0;
+        position: relative;
+        left: -270px;
+    }
+    /* ------------------------- */
+    .design_information, .colors{display: none;}
+    .slide_left{height: 230px;margin-top: 0;}
+    .slide_left > .viewWebsite{
+        margin-top: 30px;
+    }
+    .slide_right1, .slide_right2{
+        margin: 0;
+        top: 150px;
+        left: -550px;
+    }
+    
+}
+@media screen and (max-width:767px) {
+    
+}
+@media screen and (max-width:499px) {
+    
+}
+
+

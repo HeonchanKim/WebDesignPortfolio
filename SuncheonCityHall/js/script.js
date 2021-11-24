@@ -219,16 +219,14 @@ window.addEventListener("load", function () {
 
     // 슬라이드 클릭 이벤트
     slideRightButton.addEventListener("click", function () {
-        if(mainSlide.style.left == "-100%") return false;
+        if(mainSlide.style.left == "-100%" || mainSlide.style.transitionDuration == duration + "ms") return false;
         window.clearInterval(timerId4);
         doSlideRight();
-        timerId4 = window.setInterval(doSlideRight, offsetTime);
     });
     slideLeftButton.addEventListener("click", function () {
         if(mainSlide.style.transitionDuration == duration + "ms") return false;
         window.clearInterval(timerId4);
         doSlideLeft();
-        timerId4 = window.setInterval(doSlideRight, offsetTime);
     });
     slideStart.addEventListener("click", function () {
         this.classList.toggle("stopOn");
@@ -242,7 +240,6 @@ window.addEventListener("load", function () {
     
     // 슬라이드 후버 이벤트
     mainSlide.addEventListener("mouseenter",function () {
-        slideStart.classList.add("stopOn");
         window.clearInterval(timerId4);
     });
     mainSlide.addEventListener("mouseleave",function () {
@@ -251,12 +248,7 @@ window.addEventListener("load", function () {
     });
 
     Bullet.addEventListener("mouseenter",function () {
-        slideStart.classList.add("stopOn");
         window.clearInterval(timerId4);
-    });
-    Bullet.addEventListener("mouseleave",function () {
-        slideStart.classList.remove("stopOn");
-        timerId4 = window.setInterval(doSlideRight, offsetTime);
     });
     
     let timerId4 = window.setInterval(doSlideRight, offsetTime);
@@ -265,7 +257,8 @@ window.addEventListener("load", function () {
     for(let m = 0; m < slideBullet.length; m++){
         slideBullet[m].addEventListener("click", function (event) {
             event.preventDefault();
-            
+            if(mainSlide.style.transitionDuration == duration + "ms") return false;
+            // window.clearInterval(timerId4);
             let clickedIndex = m;
             
             // 현재 a요소와 클릭된 a요소의 차이
@@ -328,7 +321,6 @@ window.addEventListener("load", function () {
     function doSlideLeft() {
         index--;
         if(index < 0) index = 2;
-        // index %= -mainSlideCount;
         mainSlide.insertBefore(mainSlide.lastElementChild, mainSlide.firstElementChild)
         mainSlide.style.left = "-100%";
         window.setTimeout(function () {

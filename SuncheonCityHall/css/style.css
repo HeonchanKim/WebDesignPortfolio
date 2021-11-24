@@ -401,7 +401,7 @@ input{
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 16.5px;
-    z-index: 2;
+    z-index: 1;
 }
 .slideBullet span{display: none;}
 .slideBullet > ul{
