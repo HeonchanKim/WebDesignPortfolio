@@ -292,8 +292,16 @@ window.addEventListener("load", function () {
 
     // 스크롤링 키보드 이벤트
     window.addEventListener("keydown", function (event){
-        event.preventDefault();
-    });
+        if(event.defaultPrevented){return false;}
+        let key = event.key;
+        let handled = false;
+        if(key == " " || key == "ArrowDown" || key == "PageDown" || key == "ArrowUp" || key == "PageUp"){
+            handled = true;
+        }
+        if(handled){
+            event.preventDefault();
+        }
+    },true);
     window.addEventListener("keyup", function (event){
         event.preventDefault();
         let key = event.key;
