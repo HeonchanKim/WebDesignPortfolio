@@ -247,7 +247,6 @@ button{
 }
 .mainSlide > li{
     width: 25%;
-    /* min-width: 1900px; */
     float: left;
 }
 .mainSlide > li > a{
